@@ -1,20 +1,26 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Sistema Cristal Rock — Gestor de Catálogos desde InDesign
 
-# Ejecuta e implementa tu app de AI Studio
+Sistema para procesar archivos **IDML/INDD** de Adobe InDesign, extraer componentes, variables y precios, y sincronizar los datos con bases de datos, archivos Excel y APIs externas.
 
-Esto contiene todo lo que necesitas para ejecutar tu app localmente.
+## Flujo de trabajo
 
-Ve tu app en AI Studio: https://ai.studio/apps/4d6b51dc-71d0-40dc-a7b8-9cd1f0c89c37
+1. **Subir archivo IDML/INDD** — El diseño maestro de InDesign se procesa y se analiza su estructura
+2. **Extracción automática** — El sistema detecta variables (`{{price}}`, `{{sku}}`, `{{product_name}}`, etc.), componentes reutilizables y muestras de color
+3. **Mapeo de datos** — Las variables extraídas se vinculan a campos de bases de datos, archivos Excel o APIs externas
+4. **Sincronización** — Los datos se mantienen actualizados desde las fuentes conectadas (PostgreSQL, SAP, Excel, APIs REST)
+5. **Vista previa** — Se renderiza el catálogo con los datos sincronizados para verificar que todo coincida
+6. **Exportación** — Se compila el catálogo final como PDF listo para impresión
 
-## Ejecutar Localmente
+## Tecnología
 
-**Requisitos previos:** Node.js
+- React + TypeScript + Vite
+- Tailwind CSS
+- Google Gemini AI (generación de activos y mapeo inteligente)
+- GitHub Pages (despliegue)
 
+## Ejecutar localmente
 
-1. Instala las dependencias:
-   `npm install`
-2. Configura la `GEMINI_API_KEY` en [.env.local](.env.local) con tu clave de API de Gemini
-3. Ejecuta la app:
-   `npm run dev`
+```bash
+npm install
+npm run dev
+```
