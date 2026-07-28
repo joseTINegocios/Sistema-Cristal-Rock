@@ -50,7 +50,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
             Winter_Catalog_2024.indd
           </h2>
           <p className="text-xs text-[#5f5e5e]">
-            Diseño Maestro InDesign • 12 Enlaces de Variables Activos • Último guardado hace 10m
+            Procesa archivos IDML/INDD de Adobe InDesign. Extrae componentes, variables, precios y metadatos del diseño maestro.
           </p>
         </div>
 
@@ -195,7 +195,7 @@ Historial de Versiones
           {/* Drag & Drop INDD Overlay Notice */}
           <div className="p-3 bg-[#f5f3ef] border-t border-[#eae8e4] text-center text-xs text-[#5f5e5e] flex items-center justify-center gap-2">
             <span className="material-symbols-outlined text-[18px] text-[#af101a]">upload_file</span>
-            <span>Arrastra y suelta archivos <strong>.INDD</strong> o <strong>.IDML</strong> actualizados aquí para resincronizar la geometría</span>
+            <span>Arrastra y suelta archivos <strong>.IDML</strong> o <strong>.INDD</strong> de Adobe InDesign para procesar, extraer variables, componentes y sincronizar geometría</span>
           </div>
         </div>
 

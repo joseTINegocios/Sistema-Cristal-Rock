@@ -3,13 +3,13 @@ import { Project, ProductItem, TemplateVariable, AIAssetItem, SyncConnection, Ex
 export const initialProjects: Project[] = [
   {
     id: 'proj-1',
-    name: 'Summer Collections 2024',
+    name: 'Catálogo Relojes Lujo - Extraído de IDML',
     status: 'Syncing',
     lastUpdate: '2 minutes ago',
     productsCount: 1240,
     pagesCount: 84,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuADYO0IX_gSckId8UdgwtFgRQ84cE-nG7nmtc9a5bQWsC8k5GgJJUFhgvZ488d3hczBboUdddBCgfw_oDupuSG33_YcKg5QqLBQCfb0uz2GGZQLJSiZrZCwcF11ix3_3fdwTWQY-YCriNs4zK7il_NRy9aJQx2EqGqlYsLoHYWhd0LbELjlGyZZNnvbnQxGeqiVxXG_AyNTkGexjBK43fY7prVHIfco1RVO8rVFv1bRkyjfne9tgoYONK1F59vVISII9gB0V0w3UAN7',
-    dataSources: ['Shopify Main', 'ERP-X1'],
+    dataSources: ['API Shopify', 'ERP-X1', 'Precios_Proveedores.xlsx'],
     templates: { name: 'Luxe Grid v2.4', tag: 'Core' },
     aiAssets: [
       { code: 'OR', label: 'Object Recognition', bg: 'bg-red-600 text-white' },
@@ -19,13 +19,13 @@ export const initialProjects: Project[] = [
   },
   {
     id: 'proj-2',
-    name: 'Industrial Parts Main Catalog',
+    name: 'Catálogo Industrial - Procesado desde INDD',
     status: 'Published',
     lastUpdate: 'May 12, 2024',
     productsCount: 42500,
     pagesCount: 1105,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCFDZM0y3La0sNWlqtNrye8q7ytHuWpJT0xQi0kJQKdNX74rxabL-2epVUcplTPMOdLOnjDS3fFMDo_2J6yF3cSPNB6fT-aDM_eE2Dlla6mrbz3uFBBoWH51C7tN8gapMj2U4a6yaAqZ62X0rL0Oo6JRiu-nKzN9DJLSBPbopbHg5HxZ7jbuo-LLK6jFWtaz7sKKlKL79f9egJRQxYyxHxqxfU85ceE4Mdolx66u3eEMtCdDg1ndcG48ct4nxOhmEVfarJfXWip7YKn',
-    dataSources: ['SQL-Master'],
+    dataSources: ['SQL-Master', 'Inventario_Bodega.xlsx'],
     templates: { name: 'Tech Specs v1.1', tag: 'Custom' },
     aiAssets: [
       { code: 'DG', label: 'Diagram Generation', bg: 'bg-red-700 text-white' },
@@ -34,7 +34,7 @@ export const initialProjects: Project[] = [
   },
   {
     id: 'proj-3',
-    name: 'Skincare 2025 Preview',
+    name: 'Catálogo Cosmética - IDML Pendiente',
     status: 'Draft',
     lastUpdate: 'Created: 2 days ago',
     productsCount: 0,
@@ -64,9 +64,9 @@ export const initialProducts: ProductItem[] = [
       wholesalePrice: 350.00,
       leadTime: '2 Weeks',
       affectedCatalogs: [
-        { title: 'Summer Collection 2024', page: 'Page 14 • Premium Placement', feature: true },
-        { title: 'Enterprise B2B Price List', page: 'Digital Portal Only' },
-        { title: 'Luxury Lifestyle Quarterly', page: 'Cover Story • Feature', feature: true }
+        { title: 'Catálogo Relojes - IDML Extraído', page: 'Pág 14 • Extraído de INDD', feature: true },
+        { title: 'Lista Precios B2B - Sync Excel', page: 'Portal Digital' },
+        { title: 'Catálogo Premium - Datos API', page: 'Portada • Sincronizado', feature: true }
       ]
     }
   },
@@ -87,7 +87,7 @@ export const initialProducts: ProductItem[] = [
       wholesalePrice: 890.00,
       leadTime: '3 Weeks',
       affectedCatalogs: [
-        { title: 'Audio & Studio Systems 2024', page: 'Page 42 • Center Spread' }
+        { title: 'Catálogo Audio - Procesado desde INDD', page: 'Pág 42 • Spread Central' }
       ]
     }
   },
@@ -108,7 +108,7 @@ export const initialProducts: ProductItem[] = [
       wholesalePrice: 620.00,
       leadTime: '1 Week',
       affectedCatalogs: [
-        { title: 'Premium Home Essentials', page: 'Page 8 • Hero Section' }
+        { title: 'Catálogo Hogar - IDML Procesado', page: 'Pág 8 • Sección Principal' }
       ]
     }
   },
@@ -188,16 +188,16 @@ export const initialAIAssets: AIAssetItem[] = [
 ];
 
 export const initialConnections: SyncConnection[] = [
-  { id: 'conn-1', name: 'REST API Endpoint', subtitle: 'External Inventory V3', type: 'api', status: 'Active', lastSync: '14m ago', recordsCount: '84,203' },
-  { id: 'conn-2', name: 'PostgreSQL Main', subtitle: 'Internal Product DB', type: 'postgres', status: 'Active', lastSync: '2h ago', recordsCount: '412,000' },
-  { id: 'conn-3', name: 'SAP Business One', subtitle: 'ERP Integration', type: 'sap', status: 'Error', lastSync: 'Failed', errorMessage: 'Authentication expired' },
-  { id: 'conn-4', name: 'Manual Overrides', subtitle: 'prices_v2_final.xlsx', type: 'excel', status: 'Idle', lastSync: '1 day ago' },
+  { id: 'conn-1', name: 'API Shopify', subtitle: 'Inventario en vivo', type: 'api', status: 'Active', lastSync: '14m ago', recordsCount: '84,203' },
+  { id: 'conn-2', name: 'PostgreSQL Principal', subtitle: 'BDD de productos interna', type: 'postgres', status: 'Active', lastSync: '2h ago', recordsCount: '412,000' },
+  { id: 'conn-3', name: 'SAP Business One', subtitle: 'Integración ERP', type: 'sap', status: 'Error', lastSync: 'Fallida', errorMessage: 'Autenticación expirada' },
+  { id: 'conn-4', name: 'Precios_Proveedores.xlsx', subtitle: 'Archivo Excel cargado', type: 'excel', status: 'Idle', lastSync: '1 day ago' },
 ];
 
 export const initialExportHistory: ExportHistoryItem[] = [
-  { id: 'exp-1', filename: 'v2.4.1_Production_Full', date: '14 Oct, 2026', size: '182.4 MB', status: 'Success', type: 'pdf' },
-  { id: 'exp-2', filename: 'Daily_Delta_Backup', date: 'In progress...', size: 'Calc...', status: 'Processing', progress: 82, type: 'zip' },
-  { id: 'exp-3', filename: 'Marketing_Web_Assets', date: '10 Oct, 2026', size: '42.1 MB', status: 'Success', type: 'png' },
-  { id: 'exp-4', filename: 'Nightly_Sync_Dump', date: '09 Oct, 2026', size: '0 MB', status: 'Failed', error: 'ERR_SERVER_UNREACHABLE. Check data source availability.', type: 'zip' },
-  { id: 'exp-5', filename: 'v2.4.0_Archive', date: '01 Oct, 2026', size: '175.9 MB', status: 'Success', type: 'pdf' },
+  { id: 'exp-1', filename: 'Catálogo_Relojes_Desde_INDD', date: '14 Oct, 2026', size: '182.4 MB', status: 'Success', type: 'pdf' },
+  { id: 'exp-2', filename: 'Sync_Excel_Precios_Proveedores', date: 'En progreso...', size: 'Calc...', status: 'Processing', progress: 82, type: 'zip' },
+  { id: 'exp-3', filename: 'Catálogo_Industrial_INDD_Export', date: '10 Oct, 2026', size: '42.1 MB', status: 'Success', type: 'pdf' },
+  { id: 'exp-4', filename: 'Sync_BDD_Productos', date: '09 Oct, 2026', size: '0 MB', status: 'Failed', error: 'ERR_SERVIDOR_INALCANZABLE. Verificar conexión a base de datos.', type: 'zip' },
+  { id: 'exp-5', filename: 'Catálogo_Cosmética_IDML_v2', date: '01 Oct, 2026', size: '175.9 MB', status: 'Success', type: 'pdf' },
 ];

@@ -40,7 +40,7 @@ export const ExportCenterView: React.FC<ExportCenterViewProps> = ({
             Centro de Exportación y Comparación de Versiones
           </h2>
           <p className="text-xs text-[#5f5e5e]">
-            Compila PDFs listos para impresión empresarial, paquetes de activos digitales e inspecciona diferencias visuales.
+            Exporta catálogos como PDFs listos para impresión, paquetes de activos y datos sincronizados desde BDD/Excel/API.
           </p>
         </div>
       </div>

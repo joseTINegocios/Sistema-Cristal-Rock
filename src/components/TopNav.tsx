@@ -21,19 +21,19 @@ export const TopNav: React.FC<TopNavProps> = ({
   const getSectionTitle = () => {
     switch (currentSection) {
       case 'dashboard':
-        return 'Catalog Manager';
+        return 'Gestor de Catálogo';
       case 'projects':
-        return 'Catalog Manager';
+        return 'Gestor de Catálogo';
       case 'products':
-        return 'Catalog Manager';
+        return 'Gestor de Catálogo';
       case 'templates':
-        return 'Catalog Manager';
+        return 'Gestor de Catálogo';
       case 'ai-assets':
-        return 'Catalog Manager';
+        return 'Gestor de Catálogo';
       case 'preview':
-        return 'Catalog Manager';
+        return 'Gestor de Catálogo';
       case 'sync':
-        return 'Catalog Manager';
+        return 'Gestor de Catálogo';
       case 'export':
         return 'Centro de Exportación';
       case 'settings':
@@ -156,19 +156,7 @@ export const TopNav: React.FC<TopNavProps> = ({
           </button>
         )}
 
-        <div className="pl-3 border-l border-[#eae8e4] flex items-center gap-3">
-          <div className="text-right hidden xl:block">
-            <p className="text-xs font-bold text-[#1b1c1a]">Alex Rivera</p>
-            <p className="text-[10px] text-[#5f5e5e] uppercase tracking-wider">Admin de Catálogo</p>
-          </div>
-          <div className="w-9 h-9 rounded-full border-2 border-[#e4beba] overflow-hidden">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9qjXEmziOTSVopAmu5BjhIxNyf2fgb6I2GX_r5LWEXhCLiR8TRkTb4A4ihXMFtHlgtpI1o3H9vxXwqL2nHt2mr96GHt7gOGgJYhVHGF7FQMc3mvO3H2UEQ_f35tllhgiA3FzrGL_rkW-aXNUJVOAf7Js5N2UvFIjqW5NDDBV4Bq2MC4wswMz5ukmE2Gpbp4EBSiHsrYntDF19jXVExwaVg5Uejb4idb1ldKvBOAx01VixQGQ6UH55gSurHwsw8Ej5F1U24TpR917d"
-              alt="Alex Rivera Profile"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+
       </div>
     </header>
   );

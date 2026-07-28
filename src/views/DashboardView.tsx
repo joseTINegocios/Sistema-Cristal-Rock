@@ -42,7 +42,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <h2 className="font-geist text-[32px] font-semibold text-[#1b1c1a] tracking-tight">
-            Resumen de Inteligencia
+            Panel de Control
           </h2>
           <p className="text-[#5f5e5e] text-sm mt-1">{timeStr || 'Cargando estado del sistema...'}</p>
         </div>
@@ -65,8 +65,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
           <div className="relative z-10">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="font-geist text-[24px] font-semibold text-[#1b1c1a]">Salud del Catálogo</h3>
-                <p className="text-[#5f5e5e] text-xs">Rendimiento agregado en 24 nodos globales</p>
+                <h3 className="font-geist text-[24px] font-semibold text-[#1b1c1a]">Estado del Catálogo</h3>
+                <p className="text-[#5f5e5e] text-xs">Monitoreo de sincronización de datos, conexiones activas y procesos de extracción</p>
               </div>
               <div className="bg-[#f5f3ef] p-2 rounded-lg border border-[#eae8e4]">
                 <span className="material-symbols-outlined text-[#af101a]">analytics</span>
@@ -166,7 +166,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
               </div>
             </div>
             <p className="text-xs text-center text-[#5f5e5e]">
-              Próxima sincronización programada en <span className="text-[#af101a] font-bold">14m 22s</span>
+              Próxima sincronización con BDD/Excel/API en <span className="text-[#af101a] font-bold">14m 22s</span>
             </p>
           </div>
 
@@ -231,12 +231,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
             className="bg-white border border-[#E5E1DA] rounded-xl p-4 flex flex-col gap-1 hover:shadow-md cursor-pointer transition-all"
           >
             <div className="flex justify-between items-start">
-              <span className="text-[#5f5e5e] text-[10px] font-bold uppercase tracking-wider">Plantillas</span>
+              <span className="text-[#5f5e5e] text-[10px] font-bold uppercase tracking-wider">Archivos IDML Procesados</span>
               <span className="material-symbols-outlined text-[#af101a] text-[18px]">description</span>
             </div>
             <span className="text-2xl font-geist font-bold text-[#1b1c1a]">156</span>
             <span className="text-[10px] text-[#5f5e5e] font-bold flex items-center gap-1">
-              <span className="material-symbols-outlined text-[12px]">edit</span> 12 borradores en progreso
+              <span className="material-symbols-outlined text-[12px]">check_circle</span> 142 con variables extraídas
             </span>
           </div>
         </div>
@@ -300,12 +300,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
           {/* Generated Assets Gallery */}
           <div className="bg-white border border-[#E5E1DA] rounded-xl p-6 shadow-sm">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Activos Generados</h3>
+              <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Archivos IDML Procesados</h3>
               <button
-                onClick={() => onNavigate('ai-assets')}
+                onClick={() => onNavigate('templates')}
                 className="text-[#af101a] text-xs font-bold hover:underline"
               >
-                Ver Todos los Activos
+                Ver Plantillas
               </button>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -317,7 +317,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
                   add_photo_alternate
                 </span>
                 <span className="text-[10px] font-bold text-[#5f5e5e] uppercase tracking-wider text-center">
-                  Generar Nuevo
+                  Subir IDML
                 </span>
               </div>
 
@@ -365,7 +365,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
           {/* Recently Exported PDFs */}
           <div className="bg-white border border-[#E5E1DA] rounded-xl p-6 shadow-sm">
             <div className="flex justify-between items-center mb-3">
-              <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">PDFs Exportados Recientemente</h3>
+              <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Últimas Exportaciones desde InDesign</h3>
               <button
                 onClick={() => onNavigate('export')}
                 className="text-[#af101a] text-xs font-bold hover:underline"
@@ -380,8 +380,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
                     <span className="material-symbols-outlined text-[20px]">picture_as_pdf</span>
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-[#1b1c1a]">2024_Q4_Inventory_Master.pdf</p>
-                    <p className="text-[10px] text-[#5f5e5e]">Exportado Oct 23 • 12.4 MB • 428 Páginas</p>
+                    <p className="text-xs font-bold text-[#1b1c1a]">Catálogo_Relojes_IDML_Export.pdf</p>
+                    <p className="text-[10px] text-[#5f5e5e]">Exportado Oct 23 • 12.4 MB • 428 Páginas • Desde INDD</p>
                   </div>
                 </div>
                 <button title="Descargar" className="p-2 hover:bg-white rounded-lg text-[#5f5e5e] hover:text-[#af101a]">
@@ -395,8 +395,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
                     <span className="material-symbols-outlined text-[20px]">picture_as_pdf</span>
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-[#1b1c1a]">Luxury_Collection_Print_Spec.pdf</p>
-                    <p className="text-[10px] text-[#5f5e5e]">Exportado Oct 21 • 8.1 MB • 156 Páginas</p>
+                    <p className="text-xs font-bold text-[#1b1c1a]">Catálogo_Industrial_INDD_Export.pdf</p>
+                    <p className="text-[10px] text-[#5f5e5e]">Exportado Oct 21 • 8.1 MB • 156 Páginas • Datos sincronizados</p>
                   </div>
                 </div>
                 <button title="Descargar" className="p-2 hover:bg-white rounded-lg text-[#5f5e5e] hover:text-[#af101a]">

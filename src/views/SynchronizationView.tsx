@@ -37,11 +37,15 @@ export const SynchronizationView: React.FC<SynchronizationViewProps> = ({ connec
             Motor de Sincronización
           </h2>
           <p className="text-xs text-[#5f5e5e]">
-            Orquestación de datos en tiempo real multi-nodo para Catálogos Empresariales.
+            Sincroniza catálogos desde bases de datos, archivos Excel y APIs externas. Mantén actualizados precios, inventario y metadatos.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
+          <button className="px-4 py-2 border border-[#eae8e4] hover:bg-[#f5f3ef] rounded-lg text-xs font-bold text-[#1b1c1a] flex items-center gap-1.5">
+            <span className="material-symbols-outlined text-[18px]">table_chart</span>
+            Subir Excel
+          </button>
           <button className="px-4 py-2 border border-[#eae8e4] hover:bg-[#f5f3ef] rounded-lg text-xs font-bold text-[#1b1c1a] flex items-center gap-1.5">
             <span className="material-symbols-outlined text-[18px]">event</span>
             Programar Trabajos
@@ -111,11 +115,8 @@ export const SynchronizationView: React.FC<SynchronizationViewProps> = ({ connec
           <div className="flex justify-between items-center border-b border-[#eae8e4] pb-3">
             <div>
               <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Mapeador Visual de Campos</h3>
-              <p className="text-xs text-[#5f5e5e]">Mapea variables de origen al esquema del Catálogo Empresarial.</p>
+              <p className="text-xs text-[#5f5e5e]">Vincula campos de BDD, Excel o APIs externas a las variables extraídas de tus archivos InDesign.</p>
             </div>
-            <span className="px-3 py-1 bg-[#1a472a]/10 text-[#1a472a] text-xs font-bold rounded-full">
-              Sugerencia IA: 94% Coincidencia
-            </span>
           </div>
 
           {/* Mapper Diagram */}

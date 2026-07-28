@@ -56,7 +56,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
             Proyectos de Catálogo
           </h2>
           <p className="text-[#5f5e5e] text-base mt-1">
-            Gestiona y orquesta tus catálogos empresariales impulsados por IA.
+            Crea catálogos desde archivos IDML de InDesign, extrae componentes y variables, vincula datos de BDD, Excel y APIs externas.
           </p>
         </div>
 
