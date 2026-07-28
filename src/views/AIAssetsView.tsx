@@ -86,7 +86,7 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
           }`}
         >
           <span className="material-symbols-outlined text-[18px]">grid_view</span>
-          Assets Library
+          Biblioteca de Activos
         </button>
 
         <button
@@ -98,7 +98,7 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
           }`}
         >
           <span className="material-symbols-outlined text-[18px]">auto_stories</span>
-          Cover Generator
+Generador de Portadas
         </button>
 
         <button
@@ -110,19 +110,19 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
           }`}
         >
           <span className="material-symbols-outlined text-[18px]">draw</span>
-          Icon Designer
-        </button>
+Diseñador de Iconos
+          </button>
 
-        <button
-          onClick={() => onSubViewChange('extractor')}
-          className={`flex-1 py-2 px-3 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
-            subView === 'extractor'
-              ? 'bg-[#af101a] text-white shadow'
-              : 'text-[#5f5e5e] hover:bg-[#f5f3ef]'
-          }`}
-        >
-          <span className="material-symbols-outlined text-[18px]">crop_free</span>
-          Extractor
+          <button
+            onClick={() => onSubViewChange('extractor')}
+            className={`flex-1 py-2 px-3 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+              subView === 'extractor'
+                ? 'bg-[#af101a] text-white shadow'
+                : 'text-[#5f5e5e] hover:bg-[#f5f3ef]'
+            }`}
+          >
+            <span className="material-symbols-outlined text-[18px]">crop_free</span>
+            Extractor de Componentes
         </button>
       </div>
 
@@ -140,8 +140,8 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
               <div className="w-8 h-8 rounded-lg bg-[#ffdad6] text-[#af101a] flex items-center justify-center mb-2">
                 <span className="material-symbols-outlined text-[18px]">landscape</span>
               </div>
-              <p className="font-geist font-bold text-sm text-[#1b1c1a]">Backgrounds</p>
-              <p className="text-xs text-[#5f5e5e]">124 Assets</p>
+              <p className="font-geist font-bold text-sm text-[#1b1c1a]">Fondos</p>
+              <p className="text-xs text-[#5f5e5e]">124 Activos</p>
             </div>
 
             <div
@@ -153,8 +153,8 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
               <div className="w-8 h-8 rounded-lg bg-[#d3e4fe] text-[#0b1c30] flex items-center justify-center mb-2">
                 <span className="material-symbols-outlined text-[18px]">campaign</span>
               </div>
-              <p className="font-geist font-bold text-sm text-[#1b1c1a]">Campaigns</p>
-              <p className="text-xs text-[#5f5e5e]">86 Assets</p>
+              <p className="font-geist font-bold text-sm text-[#1b1c1a]">Campañas</p>
+              <p className="text-xs text-[#5f5e5e]">86 Activos</p>
             </div>
 
             <div
@@ -166,8 +166,8 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
               <div className="w-8 h-8 rounded-lg bg-[#eae8e4] text-[#1b1c1a] flex items-center justify-center mb-2">
                 <span className="material-symbols-outlined text-[18px]">category</span>
               </div>
-              <p className="font-geist font-bold text-sm text-[#1b1c1a]">Icons</p>
-              <p className="text-xs text-[#5f5e5e]">210 Assets</p>
+              <p className="font-geist font-bold text-sm text-[#1b1c1a]">Iconos</p>
+              <p className="text-xs text-[#5f5e5e]">210 Activos</p>
             </div>
 
             <div
@@ -179,15 +179,17 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
               <div className="w-8 h-8 rounded-lg bg-[#1a472a]/10 text-[#1a472a] flex items-center justify-center mb-2">
                 <span className="material-symbols-outlined text-[18px]">filter_center_focus</span>
               </div>
-              <p className="font-geist font-bold text-sm text-[#1b1c1a]">Product Frames</p>
-              <p className="text-xs text-[#5f5e5e]">48 Assets</p>
+              <p className="font-geist font-bold text-sm text-[#1b1c1a]">Marcos de Producto</p>
+              <p className="text-xs text-[#5f5e5e]">48 Activos</p>
             </div>
           </div>
 
           {/* Filter Bar */}
           <div className="flex justify-between items-center bg-white border border-[#E5E1DA] rounded-xl p-3 shadow-sm">
             <div className="flex gap-2">
-              {(['All', 'Verified', 'In Draft'] as const).map((tab) => (
+              {(['All', 'Verified', 'In Draft'] as const).map((tab) => {
+                const tabLabels: Record<string, string> = { All: 'Todos', Verified: 'Verificados', 'In Draft': 'En Borrador' };
+                return (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
@@ -197,9 +199,10 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
                       : 'text-[#5f5e5e] hover:bg-[#f5f3ef]'
                   }`}
                 >
-                  {tab}
+                  {tabLabels[tab]}
                 </button>
-              ))}
+                );
+              })}
             </div>
 
             {selectedCategory !== 'All' && (
@@ -207,7 +210,7 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
                 onClick={() => setSelectedCategory('All')}
                 className="text-xs text-[#af101a] font-bold hover:underline"
               >
-                Reset Category
+                Restablecer Categoría
               </button>
             )}
           </div>
@@ -228,7 +231,7 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
                   {asset.isAIGenerated && (
                     <span className="absolute top-3 left-3 bg-[#af101a] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1 shadow-md">
                       <span className="material-symbols-outlined text-[12px]">auto_awesome</span>
-                      AI Generated
+                      Generado por IA
                     </span>
                   )}
                   <span className="absolute bottom-3 right-3 bg-black/70 text-white text-[10px] font-mono px-2 py-0.5 rounded">
@@ -245,14 +248,17 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
                     <span className={`text-[9px] font-bold px-2 py-0.5 rounded ${
                       asset.status === 'Verified' ? 'bg-[#1a472a]/10 text-[#1a472a]' : 'bg-amber-100 text-amber-800'
                     }`}>
-                      {asset.status}
+                      {
+                      asset.status === 'Verified' ? 'Verificado' :
+                      asset.status === 'In Draft' ? 'En Borrador' : asset.status
+                    }
                     </span>
                   </div>
 
                   <div className="pt-2 border-t border-[#eae8e4] flex justify-between items-center text-xs">
                     <span className="text-[10px] text-[#5f5e5e]">{asset.updated}</span>
                     <button className="text-[#af101a] hover:underline font-bold text-xs flex items-center gap-1">
-                      <span>Details</span>
+                      <span>Detalles</span>
                       <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                     </button>
                   </div>
@@ -279,10 +285,10 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
                 <span className="text-xs font-mono tracking-widest text-[#af101a] font-bold uppercase">
                   REDLINE BRANDING • VOL 04-24
                 </span>
-                <p className="text-[10px] text-neutral-400 font-mono">ENTERPRISE EDITION</p>
+                <p className="text-[10px] text-neutral-400 font-mono">EDICIÓN EMPRESARIAL</p>
               </div>
               <span className="px-3 py-1 bg-white/10 backdrop-blur-md text-white text-[10px] font-mono rounded border border-white/20">
-                Data Protected
+                Datos Protegidos
               </span>
             </div>
 
@@ -295,15 +301,15 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
                 {coverSubtitle}
               </p>
               <p className="text-xs text-neutral-300 font-light leading-relaxed max-w-xs mx-auto">
-                Synthesized by Gemini Visual Intelligence for the 2026 Enterprise Edition.
+                Sintetizado por Gemini Visual Intelligence para la Edición Empresarial 2026.
               </p>
             </div>
 
             {/* Cover Footer */}
             <div className="w-full z-10 border-t border-white/20 pt-4 flex justify-between items-end text-[10px] font-mono text-neutral-400">
               <div>
-                <p>AUTOGEN SPEC: REF-9921-X</p>
-                <p className="text-neutral-500">AI generates graphics only. Real DB metadata embedded.</p>
+                <p>ESPECIFICACIÓN AUTOGEN: REF-9921-X</p>
+                <p className="text-neutral-500">La IA genera solo gráficos. Metadatos reales de BD incrustados.</p>
               </div>
               <div className="w-12 h-12 bg-white p-1 rounded flex items-center justify-center">
                 <span className="material-symbols-outlined text-black text-2xl">qr_code_2</span>
@@ -312,7 +318,7 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
 
             {/* Iterations Tray */}
             <div className="w-full z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-              <span className="text-neutral-400 text-[11px]">Alternative Iterations</span>
+              <span className="text-neutral-400 text-[11px]">Iteraciones Alternativas</span>
               <div className="flex gap-2">
                 <div className="w-8 h-8 rounded border-2 border-[#af101a] overflow-hidden cursor-pointer">
                   <img src={coverImage} alt="Iter 1" className="w-full h-full object-cover" />
@@ -328,13 +334,13 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
           <div className="lg:col-span-5 bg-white border border-[#E5E1DA] rounded-2xl p-6 space-y-6 shadow-sm">
             <h3 className="font-geist text-[20px] font-bold text-[#1b1c1a] border-b border-[#eae8e4] pb-3 flex items-center gap-2">
               <span className="material-symbols-outlined text-[#af101a]">auto_awesome</span>
-              Design Intelligence
+Inteligencia de Diseño
             </h3>
 
             {/* Prompt Textarea */}
             <div className="space-y-2">
               <label className="block text-xs font-bold text-[#5f5e5e] uppercase tracking-wider">
-                Art Direction Prompt
+                Prompt de Dirección de Arte
               </label>
               <textarea
                 rows={4}
@@ -348,10 +354,12 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
             {/* Visual Style Switcher */}
             <div className="space-y-2">
               <label className="block text-xs font-bold text-[#5f5e5e] uppercase tracking-wider">
-                Visual Style Archetype
+                Arquetipo de Estilo Visual
               </label>
               <div className="grid grid-cols-2 gap-2">
-                {['Minimalist', 'Cinematic', 'Product Focus', 'Abstract'].map((style) => (
+                {['Minimalist', 'Cinematic', 'Product Focus', 'Abstract'].map((style) => {
+                  const styleLabels: Record<string, string> = { Minimalist: 'Minimalista', Cinematic: 'Cinematográfico', 'Product Focus': 'Enfoque Producto', Abstract: 'Abstracto' };
+                  return (
                   <button
                     key={style}
                     onClick={() => setCoverStyle(style)}
@@ -361,20 +369,21 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
                         : 'bg-[#f5f3ef] text-[#1b1c1a] border-[#eae8e4] hover:bg-[#eae8e4]'
                     }`}
                   >
-                    {style}
+                    {styleLabels[style]}
                   </button>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
             {/* Safety Protocol & Aspect Ratio */}
             <div className="p-3 bg-[#f5f3ef] rounded-xl border border-[#eae8e4] space-y-2 text-xs">
               <div className="flex justify-between items-center text-[#5f5e5e]">
-                <span>Color Match Target:</span>
+                <span>Objetivo de Color:</span>
                 <span className="font-mono font-bold text-[#1b1c1a]">#AF101A Primary Accent</span>
               </div>
               <div className="flex justify-between items-center text-[#5f5e5e]">
-                <span>Export Format:</span>
+                <span>Formato de Exportación:</span>
                 <span className="font-mono font-bold text-[#1b1c1a]">Vector PDF / 300 DPI</span>
               </div>
             </div>
@@ -388,7 +397,7 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
               <span className={`material-symbols-outlined text-[20px] ${isGeneratingCover ? 'animate-spin' : ''}`}>
                 auto_awesome
               </span>
-              <span>{isGeneratingCover ? 'Generating Cover Visuals...' : 'GENERATE COVER'}</span>
+              <span>{isGeneratingCover ? 'Generando Visuales de Portada...' : 'GENERAR PORTADA'}</span>
             </button>
           </div>
         </div>
@@ -400,8 +409,8 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
           {/* Generated Icons Grid (Span 7) */}
           <div className="lg:col-span-7 bg-white border border-[#E5E1DA] rounded-2xl p-6 space-y-6 shadow-sm">
             <h3 className="font-geist text-[20px] font-bold text-[#1b1c1a] border-b border-[#eae8e4] pb-3 flex items-center justify-between">
-              <span>Generated Vector Set</span>
-              <span className="text-xs font-mono text-[#af101a] font-bold">4 SVG Variations</span>
+              <span>Conjunto de Vectores Generados</span>
+              <span className="text-xs font-mono text-[#af101a] font-bold">4 Variaciones SVG</span>
             </h3>
 
             <div className="grid grid-cols-2 gap-4">
@@ -409,28 +418,28 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
                 <span className="material-symbols-outlined text-5xl text-[#af101a] group-hover:scale-110 transition-transform">
                   watch
                 </span>
-                <span className="text-xs font-bold text-[#1b1c1a]">V1 Structural Focus</span>
+                <span className="text-xs font-bold text-[#1b1c1a]">V1 Enfoque Estructural</span>
               </div>
 
               <div className="p-6 bg-[#f5f3ef] rounded-xl border border-[#eae8e4] flex flex-col items-center justify-center gap-3 hover:border-[#af101a] transition-all cursor-pointer group">
                 <span className="material-symbols-outlined text-5xl text-[#1b1c1a] group-hover:scale-110 transition-transform">
                   precision_manufacturing
                 </span>
-                <span className="text-xs font-bold text-[#1b1c1a]">V2 Accented Duotone</span>
+                <span className="text-xs font-bold text-[#1b1c1a]">V2 Duotono Acentuado</span>
               </div>
 
               <div className="p-6 bg-[#f5f3ef] rounded-xl border border-[#eae8e4] flex flex-col items-center justify-center gap-3 hover:border-[#af101a] transition-all cursor-pointer group">
                 <span className="material-symbols-outlined text-5xl text-[#af101a] group-hover:scale-110 transition-transform">
                   diamond
                 </span>
-                <span className="text-xs font-bold text-[#1b1c1a]">V3 Bold Minimalism</span>
+                <span className="text-xs font-bold text-[#1b1c1a]">V3 Minimalismo Audaz</span>
               </div>
 
               <div className="p-6 bg-[#f5f3ef] rounded-xl border border-[#eae8e4] flex flex-col items-center justify-center gap-3 hover:border-[#af101a] transition-all cursor-pointer group">
                 <span className="material-symbols-outlined text-5xl text-[#1b1c1a] group-hover:scale-110 transition-transform">
                   shutter_speed
                 </span>
-                <span className="text-xs font-bold text-[#1b1c1a]">V4 Intricate Detail</span>
+                <span className="text-xs font-bold text-[#1b1c1a]">V4 Detalle Intrincado</span>
               </div>
             </div>
           </div>
@@ -438,12 +447,12 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
           {/* Right Icon Assistant Panel (Span 5) */}
           <div className="lg:col-span-5 bg-white border border-[#E5E1DA] rounded-2xl p-6 space-y-6 shadow-sm">
             <h3 className="font-geist text-[20px] font-bold text-[#1b1c1a] border-b border-[#eae8e4] pb-3">
-              Icon Generation Controls
+              Controles de Generación de Iconos
             </h3>
 
             <div className="space-y-2">
               <label className="block text-xs font-bold text-[#5f5e5e] uppercase tracking-wider">
-                Prompt Concept
+                Concepto del Prompt
               </label>
               <input
                 type="text"
@@ -455,7 +464,7 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
 
             <div className="space-y-2">
               <label className="block text-xs font-bold text-[#5f5e5e] uppercase tracking-wider">
-                Stroke Weight ({strokeWeight}px)
+                Grosor de Trazo ({strokeWeight}px)
               </label>
               <input
                 type="range"
@@ -469,7 +478,7 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
 
             <div className="space-y-2">
               <label className="block text-xs font-bold text-[#5f5e5e] uppercase tracking-wider">
-                Corner Roundness ({cornerRoundness}px)
+                Redondeo de Esquinas ({cornerRoundness}px)
               </label>
               <input
                 type="range"
@@ -489,7 +498,7 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
               <span className={`material-symbols-outlined text-[18px] ${isGeneratingIcons ? 'animate-spin' : ''}`}>
                 auto_awesome
               </span>
-              <span>{isGeneratingIcons ? 'Synthesizing SVG...' : 'Generate Icons'}</span>
+              <span>{isGeneratingIcons ? 'Sintetizando SVG...' : 'Generar Iconos'}</span>
             </button>
           </div>
         </div>
@@ -501,7 +510,7 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
           {/* Processing Circle & Stats (Span 4) */}
           <div className="lg:col-span-4 bg-white border border-[#E5E1DA] rounded-2xl p-6 space-y-6 shadow-sm">
             <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a] border-b border-[#eae8e4] pb-3">
-              Extraction Intelligence
+              Inteligencia de Extracción
             </h3>
 
             <div className="flex flex-col items-center justify-center py-4">
@@ -522,16 +531,16 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
                 </svg>
                 <span className="absolute font-geist text-2xl font-bold text-[#1b1c1a]">85%</span>
               </div>
-              <p className="text-xs font-bold text-[#1b1c1a]">128 / 150 Layers Parsed</p>
-              <p className="text-[10px] text-[#5f5e5e]">InDesign INDD Object Model</p>
+              <p className="text-xs font-bold text-[#1b1c1a]">128 / 150 Capas Analizadas</p>
+              <p className="text-[10px] text-[#5f5e5e]">Modelo de Objeto InDesign INDD</p>
             </div>
 
             <div className="p-3 bg-[#f5f3ef] rounded-xl text-xs space-y-1">
               <p className="font-bold text-[#af101a] flex items-center gap-1">
-                <span className="material-symbols-outlined text-sm">lightbulb</span> AI Tip
+                <span className="material-symbols-outlined text-sm">lightbulb</span> Consejo IA
               </p>
               <p className="text-[#5f5e5e]">
-                Found 3 reusable components suitable for global catalog templates.
+                Se encontraron 3 componentes reutilizables adecuados para plantillas de catálogo globales.
               </p>
             </div>
           </div>
@@ -539,7 +548,7 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
           {/* Canvas Component Bounding Box Visualizer (Span 8) */}
           <div className="lg:col-span-8 bg-white border border-[#E5E1DA] rounded-2xl p-6 space-y-4 shadow-sm">
             <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a] border-b border-[#eae8e4] pb-3">
-              Detected Component Bounding Boxes
+              Cajas Delimitadoras de Componentes Detectados
             </h3>
 
             <div className="space-y-3">
@@ -563,12 +572,12 @@ export const AIAssetsView: React.FC<AIAssetsViewProps> = ({
                       <input type="checkbox" checked={isChecked} readOnly className="rounded border-[#e4beba]" />
                       <div>
                         <p className="font-bold text-xs text-[#1b1c1a]">{comp}</p>
-                        <p className="text-[10px] text-[#5f5e5e]">Auto-extracted from Layer #4</p>
+                        <p className="text-[10px] text-[#5f5e5e]">Auto-extraído de la Capa #4</p>
                       </div>
                     </div>
 
                     <button className="px-3 py-1 bg-[#af101a] text-white rounded text-[10px] font-bold">
-                      Add to Library
+                      Agregar a la Biblioteca
                     </button>
                   </div>
                 );

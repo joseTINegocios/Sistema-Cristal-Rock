@@ -13,11 +13,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
     const updateTime = () => {
       const now = new Date();
       setTimeStr(
-        `System state as of ${now.toLocaleDateString('en-US', {
+        `Estado del sistema al ${now.toLocaleDateString('es-ES', {
           month: 'long',
           day: 'numeric',
           year: 'numeric',
-        })} at ${now.toLocaleTimeString('en-US', {
+        })} a las ${now.toLocaleTimeString('es-ES', {
           hour: '2-digit',
           minute: '2-digit',
           second: '2-digit',
@@ -42,18 +42,18 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <h2 className="font-geist text-[32px] font-semibold text-[#1b1c1a] tracking-tight">
-            Intelligence Overview
+            Resumen de Inteligencia
           </h2>
-          <p className="text-[#5f5e5e] text-sm mt-1">{timeStr || 'Loading system state...'}</p>
+          <p className="text-[#5f5e5e] text-sm mt-1">{timeStr || 'Cargando estado del sistema...'}</p>
         </div>
         <div className="flex gap-2">
           <span className="inline-flex items-center px-3 py-1 bg-[#af101a]/10 text-[#af101a] border border-[#af101a]/20 rounded-full text-xs font-bold gap-1.5">
             <span className="material-symbols-outlined text-[14px]">bolt</span>
-            AI Engine: Active
+            Motor IA: Activo
           </span>
           <span className="inline-flex items-center px-3 py-1 bg-[#f1f5ff] text-[#49596e] border border-[#617188]/20 rounded-full text-xs font-bold gap-1.5">
             <span className="material-symbols-outlined text-[14px]">database</span>
-            8 Sources Connected
+            8 Fuentes Conectadas
           </span>
         </div>
       </div>
@@ -65,8 +65,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
           <div className="relative z-10">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="font-geist text-[24px] font-semibold text-[#1b1c1a]">Catalog Health</h3>
-                <p className="text-[#5f5e5e] text-xs">Aggregated performance across 24 global nodes</p>
+                <h3 className="font-geist text-[24px] font-semibold text-[#1b1c1a]">Salud del Catálogo</h3>
+                <p className="text-[#5f5e5e] text-xs">Rendimiento agregado en 24 nodos globales</p>
               </div>
               <div className="bg-[#f5f3ef] p-2 rounded-lg border border-[#eae8e4]">
                 <span className="material-symbols-outlined text-[#af101a]">analytics</span>
@@ -76,7 +76,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
             <div className="grid grid-cols-3 gap-6 mt-6">
               <div className="flex flex-col">
                 <span className="text-[#5f5e5e] text-[11px] font-bold uppercase tracking-wider mb-1">
-                  Connected
+                  Conectados
                 </span>
                 <span className="text-4xl font-geist font-bold text-[#1b1c1a]">142</span>
                 <div className="w-full h-1.5 bg-[#eae8e4] rounded-full mt-3 overflow-hidden">
@@ -86,7 +86,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
 
               <div className="flex flex-col">
                 <span className="text-[#5f5e5e] text-[11px] font-bold uppercase tracking-wider mb-1">
-                  Synced
+                  Sincronizados
                 </span>
                 <span className="text-4xl font-geist font-bold text-[#1b1c1a]">128</span>
                 <div className="w-full h-1.5 bg-[#eae8e4] rounded-full mt-3 overflow-hidden">
@@ -96,7 +96,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
 
               <div className="flex flex-col">
                 <span className="text-[#5f5e5e] text-[11px] font-bold uppercase tracking-wider mb-1">
-                  Pending
+                  Pendientes
                 </span>
                 <span className="text-4xl font-geist font-bold text-[#1b1c1a]">14</span>
                 <div className="w-full h-1.5 bg-[#eae8e4] rounded-full mt-3 overflow-hidden">
@@ -126,7 +126,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
         {/* Sync Status Ring (Span 4) */}
         <div className="lg:col-span-4 bg-white border border-[#E5E1DA] rounded-xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
           <div className="flex justify-between items-center mb-2">
-            <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Synchronization</h3>
+            <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Sincronización</h3>
             <span 
               onClick={() => onNavigate('sync')} 
               className="material-symbols-outlined text-[#5f5e5e] text-sm cursor-pointer hover:text-[#af101a]"
@@ -162,11 +162,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <span className="text-2xl font-bold font-geist text-[#1b1c1a]">88%</span>
-                <span className="text-[10px] text-[#5f5e5e] font-bold uppercase tracking-wider">Optimal</span>
+                <span className="text-[10px] text-[#5f5e5e] font-bold uppercase tracking-wider">Óptimo</span>
               </div>
             </div>
             <p className="text-xs text-center text-[#5f5e5e]">
-              Next batch synchronization scheduled in <span className="text-[#af101a] font-bold">14m 22s</span>
+              Próxima sincronización programada en <span className="text-[#af101a] font-bold">14m 22s</span>
             </p>
           </div>
 
@@ -178,7 +178,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
             <span className={`material-symbols-outlined text-[18px] ${syncing ? 'animate-spin text-[#af101a]' : ''}`}>
               sync
             </span>
-            <span>{syncing ? 'Syncing...' : 'Force Manual Sync'}</span>
+            <span>{syncing ? 'Sincronizando...' : 'Forzar Sincronización Manual'}</span>
           </button>
         </div>
 
@@ -189,12 +189,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
             className="bg-white border border-[#E5E1DA] rounded-xl p-4 flex flex-col gap-1 hover:shadow-md cursor-pointer transition-all"
           >
             <div className="flex justify-between items-start">
-              <span className="text-[#5f5e5e] text-[10px] font-bold uppercase tracking-wider">Total Products</span>
+              <span className="text-[#5f5e5e] text-[10px] font-bold uppercase tracking-wider">Total Productos</span>
               <span className="material-symbols-outlined text-[#af101a] text-[18px]">inventory_2</span>
             </div>
             <span className="text-2xl font-geist font-bold text-[#1b1c1a]">24.8k</span>
             <span className="text-[10px] text-[#1b5e20] font-bold flex items-center gap-1">
-              <span className="material-symbols-outlined text-[12px]">trending_up</span> +12% from last month
+              <span className="material-symbols-outlined text-[12px]">trending_up</span> +12% respecto al mes anterior
             </span>
           </div>
 
@@ -203,12 +203,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
             className="bg-white border border-[#E5E1DA] rounded-xl p-4 flex flex-col gap-1 hover:shadow-md cursor-pointer transition-all"
           >
             <div className="flex justify-between items-start">
-              <span className="text-[#5f5e5e] text-[10px] font-bold uppercase tracking-wider">Connected APIs</span>
+              <span className="text-[#5f5e5e] text-[10px] font-bold uppercase tracking-wider">APIs Conectadas</span>
               <span className="material-symbols-outlined text-[#af101a] text-[18px]">api</span>
             </div>
             <span className="text-2xl font-geist font-bold text-[#1b1c1a]">18</span>
             <span className="text-[10px] text-[#5f5e5e] font-bold flex items-center gap-1">
-              <span className="material-symbols-outlined text-[12px]">check_circle</span> All systems operational
+              <span className="material-symbols-outlined text-[12px]">check_circle</span> Todos los sistemas operativos
             </span>
           </div>
 
@@ -217,12 +217,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
             className="bg-white border border-[#E5E1DA] rounded-xl p-4 flex flex-col gap-1 hover:shadow-md cursor-pointer transition-all"
           >
             <div className="flex justify-between items-start">
-              <span className="text-[#5f5e5e] text-[10px] font-bold uppercase tracking-wider">Excel Sources</span>
+              <span className="text-[#5f5e5e] text-[10px] font-bold uppercase tracking-wider">Fuentes Excel</span>
               <span className="material-symbols-outlined text-[#af101a] text-[18px]">table_chart</span>
             </div>
             <span className="text-2xl font-geist font-bold text-[#1b1c1a]">42</span>
             <span className="text-[10px] text-[#af101a] font-bold flex items-center gap-1">
-              <span className="material-symbols-outlined text-[12px]">warning</span> 2 require re-auth
+              <span className="material-symbols-outlined text-[12px]">warning</span> 2 requieren re-autenticación
             </span>
           </div>
 
@@ -231,12 +231,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
             className="bg-white border border-[#E5E1DA] rounded-xl p-4 flex flex-col gap-1 hover:shadow-md cursor-pointer transition-all"
           >
             <div className="flex justify-between items-start">
-              <span className="text-[#5f5e5e] text-[10px] font-bold uppercase tracking-wider">Templates</span>
+              <span className="text-[#5f5e5e] text-[10px] font-bold uppercase tracking-wider">Plantillas</span>
               <span className="material-symbols-outlined text-[#af101a] text-[18px]">description</span>
             </div>
             <span className="text-2xl font-geist font-bold text-[#1b1c1a]">156</span>
             <span className="text-[10px] text-[#5f5e5e] font-bold flex items-center gap-1">
-              <span className="material-symbols-outlined text-[12px]">edit</span> 12 drafts in progress
+              <span className="material-symbols-outlined text-[12px]">edit</span> 12 borradores en progreso
             </span>
           </div>
         </div>
@@ -244,7 +244,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
         {/* Secondary Bento Layer */}
         {/* Recent Activity (Span 4) */}
         <div className="lg:col-span-4 bg-white border border-[#E5E1DA] rounded-xl p-6 flex flex-col h-[380px] shadow-sm">
-          <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a] mb-4">Recent Activity</h3>
+          <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a] mb-4">Actividad Reciente</h3>
           <div className="flex-1 overflow-y-auto space-y-4 pr-1 scrollbar-hide">
             <div className="flex gap-3 group">
               <div className="relative">
@@ -254,11 +254,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
                 <div className="absolute top-8 bottom-[-16px] left-1/2 -translate-x-1/2 w-[1px] bg-[#eae8e4]"></div>
               </div>
               <div className="flex-1 pb-4">
-                <p className="text-xs font-bold text-[#1b1c1a]">Global Product Sync Complete</p>
-                <p className="text-[11px] text-[#5f5e5e] mb-1">Catalog 'Summer 2024 Fashion'</p>
+<p className="text-xs font-bold text-[#1b1c1a]">Sincronización Global de Productos Completa</p>
+                <p className="text-[11px] text-[#5f5e5e] mb-1">Catálogo 'Summer 2024 Fashion'</p>
                 <span className="text-[10px] bg-[#f5f3ef] px-2 py-0.5 rounded border border-[#eae8e4] text-[#5f5e5e]">
-                  2 mins ago
-                </span>
+                   hace 2 minutos
+                 </span>
               </div>
             </div>
 
@@ -270,11 +270,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
                 <div className="absolute top-8 bottom-[-16px] left-1/2 -translate-x-1/2 w-[1px] bg-[#eae8e4]"></div>
               </div>
               <div className="flex-1 pb-4">
-                <p className="text-xs font-bold text-[#1b1c1a]">AI Asset Generation</p>
-                <p className="text-[11px] text-[#5f5e5e] mb-1">1,240 descriptions optimized by AI</p>
+<p className="text-xs font-bold text-[#1b1c1a]">Generación de Activos IA</p>
+                <p className="text-[11px] text-[#5f5e5e] mb-1">1,240 descripciones optimizadas por IA</p>
                 <span className="text-[10px] bg-[#f5f3ef] px-2 py-0.5 rounded border border-[#eae8e4] text-[#5f5e5e]">
-                  1 hour ago
-                </span>
+                   hace 1 hora
+                 </span>
               </div>
             </div>
 
@@ -285,11 +285,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
                 </div>
               </div>
               <div className="flex-1">
-                <p className="text-xs font-bold text-[#1b1c1a]">PDF Export Initiated</p>
-                <p className="text-[11px] text-[#5f5e5e] mb-1">Requested by Alex Rivera</p>
+<p className="text-xs font-bold text-[#1b1c1a]">Exportación PDF Iniciada</p>
+                <p className="text-[11px] text-[#5f5e5e] mb-1">Solicitado por Alex Rivera</p>
                 <span className="text-[10px] bg-[#f5f3ef] px-2 py-0.5 rounded border border-[#eae8e4] text-[#5f5e5e]">
-                  3 hours ago
-                </span>
+                   hace 3 horas
+                 </span>
               </div>
             </div>
           </div>
@@ -300,12 +300,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
           {/* Generated Assets Gallery */}
           <div className="bg-white border border-[#E5E1DA] rounded-xl p-6 shadow-sm">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Generated Assets</h3>
+              <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Activos Generados</h3>
               <button
                 onClick={() => onNavigate('ai-assets')}
                 className="text-[#af101a] text-xs font-bold hover:underline"
               >
-                View All Assets
+                Ver Todos los Activos
               </button>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -317,7 +317,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
                   add_photo_alternate
                 </span>
                 <span className="text-[10px] font-bold text-[#5f5e5e] uppercase tracking-wider text-center">
-                  Generate New
+                  Generar Nuevo
                 </span>
               </div>
 
@@ -365,12 +365,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
           {/* Recently Exported PDFs */}
           <div className="bg-white border border-[#E5E1DA] rounded-xl p-6 shadow-sm">
             <div className="flex justify-between items-center mb-3">
-              <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Recently Exported PDFs</h3>
+              <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">PDFs Exportados Recientemente</h3>
               <button
                 onClick={() => onNavigate('export')}
                 className="text-[#af101a] text-xs font-bold hover:underline"
               >
-                Go to Export Center
+                Ir al Centro de Exportación
               </button>
             </div>
             <div className="space-y-2">
@@ -381,10 +381,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#1b1c1a]">2024_Q4_Inventory_Master.pdf</p>
-                    <p className="text-[10px] text-[#5f5e5e]">Exported Oct 23 • 12.4 MB • 428 Pages</p>
+                    <p className="text-[10px] text-[#5f5e5e]">Exportado Oct 23 • 12.4 MB • 428 Páginas</p>
                   </div>
                 </div>
-                <button title="Download" className="p-2 hover:bg-white rounded-lg text-[#5f5e5e] hover:text-[#af101a]">
+                <button title="Descargar" className="p-2 hover:bg-white rounded-lg text-[#5f5e5e] hover:text-[#af101a]">
                   <span className="material-symbols-outlined text-[18px]">download</span>
                 </button>
               </div>
@@ -396,10 +396,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#1b1c1a]">Luxury_Collection_Print_Spec.pdf</p>
-                    <p className="text-[10px] text-[#5f5e5e]">Exported Oct 21 • 8.1 MB • 156 Pages</p>
+                    <p className="text-[10px] text-[#5f5e5e]">Exportado Oct 21 • 8.1 MB • 156 Páginas</p>
                   </div>
                 </div>
-                <button title="Download" className="p-2 hover:bg-white rounded-lg text-[#5f5e5e] hover:text-[#af101a]">
+                <button title="Descargar" className="p-2 hover:bg-white rounded-lg text-[#5f5e5e] hover:text-[#af101a]">
                   <span className="material-symbols-outlined text-[18px]">download</span>
                 </button>
               </div>
@@ -411,14 +411,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
       {/* Floating Action Button */}
       <button
         onClick={() => onNavigate('projects')}
-        title="Create New Project"
+        title="Crear Nuevo Proyecto"
         className="fixed bottom-8 right-8 w-14 h-14 bg-[#af101a] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 group"
       >
         <span className="material-symbols-outlined text-[28px] group-hover:rotate-90 transition-transform duration-300">
           add
         </span>
         <span className="absolute right-16 bg-[#1b1c1a] text-[#fbf9f5] px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all pointer-events-none shadow-xl">
-          New Catalog Project
+          Nuevo Proyecto de Catálogo
         </span>
       </button>
     </div>

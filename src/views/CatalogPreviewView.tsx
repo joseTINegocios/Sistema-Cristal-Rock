@@ -14,8 +14,8 @@ export const CatalogPreviewView: React.FC = () => {
       {/* Left Thumbnail Navigator (Span 3) */}
       <div className="lg:col-span-3 bg-white border border-[#E5E1DA] rounded-xl p-4 space-y-4 shadow-sm">
         <h3 className="font-geist text-sm font-bold text-[#1b1c1a] border-b border-[#eae8e4] pb-2 flex items-center justify-between">
-          <span>Pages Navigator</span>
-          <span className="text-[10px] text-[#5f5e5e] font-mono">12 Pages Total</span>
+          <span>Navegador de Páginas</span>
+          <span className="text-[10px] text-[#5f5e5e] font-mono">12 Páginas en Total</span>
         </h3>
 
         <div className="space-y-3 max-h-[580px] overflow-y-auto pr-1 scrollbar-hide">
@@ -33,14 +33,14 @@ export const CatalogPreviewView: React.FC = () => {
               />
             </div>
             <div>
-              <p className="text-xs font-bold text-[#1b1c1a]">01 Cover Page</p>
+              <p className="text-xs font-bold text-[#1b1c1a]">01 Portada</p>
               {!priceSynced ? (
                 <span className="text-[9px] bg-[#af101a] text-white font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">
-                  Outdated
+                  Desactualizado
                 </span>
               ) : (
                 <span className="text-[9px] bg-[#1a472a] text-white font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">
-                  Synced
+                  Sincronizado
                 </span>
               )}
             </div>
@@ -56,9 +56,9 @@ export const CatalogPreviewView: React.FC = () => {
               02
             </div>
             <div>
-              <p className="text-xs font-bold text-[#1b1c1a]">02 Introduction</p>
+              <p className="text-xs font-bold text-[#1b1c1a]">02 Introducción</p>
               <span className="text-[9px] bg-[#1a472a]/10 text-[#1a472a] font-bold px-1.5 py-0.5 rounded uppercase">
-                Validated
+                Validado
               </span>
             </div>
           </div>
@@ -75,7 +75,7 @@ export const CatalogPreviewView: React.FC = () => {
             <div>
               <p className="text-xs font-bold text-[#1b1c1a]">03 Premium Tech</p>
               <span className="text-[9px] bg-[#1a472a]/10 text-[#1a472a] font-bold px-1.5 py-0.5 rounded uppercase">
-                Validated
+                Validado
               </span>
             </div>
           </div>
@@ -95,7 +95,7 @@ export const CatalogPreviewView: React.FC = () => {
               <span className="material-symbols-outlined text-sm">chevron_left</span>
             </button>
             <span className="font-mono text-xs font-bold text-[#1b1c1a]">
-              Page 0{activePage} of 12
+              Página 0{activePage} de 12
             </span>
             <button
               onClick={() => setActivePage((p) => Math.min(12, p + 1))}
@@ -126,7 +126,7 @@ export const CatalogPreviewView: React.FC = () => {
                 </p>
                 {!priceSynced && (
                   <span className="px-2 py-0.5 bg-[#af101a] text-white text-[8px] font-bold rounded uppercase animate-pulse">
-                    OUTDATED ASSET
+                    ACTIVO DESACTUALIZADO
                   </span>
                 )}
               </div>
@@ -174,31 +174,31 @@ export const CatalogPreviewView: React.FC = () => {
             {!priceSynced ? (
               <div className="p-3 bg-[#ffdad6]/30 border border-[#af101a] rounded-xl space-y-2">
                 <p className="font-bold text-[#af101a] flex items-center gap-1 text-xs">
-                  <span className="material-symbols-outlined text-sm">warning</span> Sync Issue
+                  <span className="material-symbols-outlined text-sm">warning</span> Problema de Sincronización
                 </p>
                 <p className="text-[11px] text-[#1b1c1a]">
-                  Product price <strong>$14,500.00</strong> is out of sync with DB master (<strong>$15,200.00</strong>).
+                  El precio del producto <strong>$14,500.00</strong> está desincronizado con la BD maestra (<strong>$15,200.00</strong>).
                 </p>
                 <button
                   onClick={handleUpdateVariable}
                   className="w-full py-1.5 bg-[#af101a] text-white rounded text-[10px] font-bold hover:brightness-110 shadow-sm"
                 >
-                  UPDATE VARIABLE
+                  ACTUALIZAR VARIABLE
                 </button>
               </div>
             ) : (
               <div className="p-3 bg-[#1a472a]/10 border border-[#1a472a]/30 rounded-xl space-y-1">
                 <p className="font-bold text-[#1a472a] flex items-center gap-1 text-xs">
-                  <span className="material-symbols-outlined text-sm">check_circle</span> Fully Synced
+                  <span className="material-symbols-outlined text-sm">check_circle</span> Completamente Sincronizado
                 </p>
                 <p className="text-[11px] text-[#1b1c1a]">
-                  All catalog variables match master database values.
+                  Todas las variables del catálogo coinciden con los valores de la BD maestra.
                 </p>
               </div>
             )}
 
             <div>
-              <p className="font-bold text-[#5f5e5e] uppercase text-[10px] mb-2">Bound Product</p>
+              <p className="font-bold text-[#5f5e5e] uppercase text-[10px] mb-2">Producto Vinculado</p>
               <div className="p-2.5 bg-[#f5f3ef] rounded-lg border border-[#eae8e4]">
                 <p className="font-bold text-[#1b1c1a]">Vanguard Chrono Titanium</p>
                 <p className="text-[10px] font-mono text-[#af101a]">ID: WH-992-AX</p>
@@ -210,11 +210,11 @@ export const CatalogPreviewView: React.FC = () => {
         {activeTab === 'METADATA' && (
           <div className="space-y-2 text-xs text-[#5f5e5e]">
             <div className="flex justify-between py-1 border-b border-[#eae8e4]">
-              <span>Template ID:</span>
+              <span>ID de Plantilla:</span>
               <span className="font-mono text-[#1b1c1a]">Luxe_Grid_v2.4</span>
             </div>
             <div className="flex justify-between py-1 border-b border-[#eae8e4]">
-              <span>Render Engine:</span>
+              <span>Motor de Renderizado:</span>
               <span className="font-mono text-[#1b1c1a]">AI Studio Vector</span>
             </div>
           </div>

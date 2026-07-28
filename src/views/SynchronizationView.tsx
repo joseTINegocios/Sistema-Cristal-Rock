@@ -12,10 +12,10 @@ export const SynchronizationView: React.FC<SynchronizationViewProps> = ({ connec
 
   const handleSyncAll = () => {
     setIsSyncingAll(true);
-    setToastMessage('Global Synchronization Pipeline Initiated...');
+    setToastMessage('Pipeline de Sincronización Global Iniciado...');
     setTimeout(() => {
       setIsSyncingAll(false);
-      setToastMessage('Global Synchronization Finished Successfully (142 nodes updated).');
+      setToastMessage('Sincronización Global Finalizada Exitosamente (142 nodos actualizados).');
       setTimeout(() => setToastMessage(null), 4000);
     }, 2000);
   };
@@ -34,17 +34,17 @@ export const SynchronizationView: React.FC<SynchronizationViewProps> = ({ connec
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h2 className="font-geist text-[28px] font-semibold text-[#1b1c1a]">
-            Synchronization Engine
+            Motor de Sincronización
           </h2>
           <p className="text-xs text-[#5f5e5e]">
-            Real-time multi-node data orchestration for Enterprise Catalogs.
+            Orquestación de datos en tiempo real multi-nodo para Catálogos Empresariales.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
           <button className="px-4 py-2 border border-[#eae8e4] hover:bg-[#f5f3ef] rounded-lg text-xs font-bold text-[#1b1c1a] flex items-center gap-1.5">
             <span className="material-symbols-outlined text-[18px]">event</span>
-            Schedule Jobs
+            Programar Trabajos
           </button>
           <button
             onClick={handleSyncAll}
@@ -54,7 +54,7 @@ export const SynchronizationView: React.FC<SynchronizationViewProps> = ({ connec
             <span className={`material-symbols-outlined text-[18px] ${isSyncingAll ? 'animate-spin' : ''}`}>
               sync
             </span>
-            <span>{isSyncingAll ? 'Synchronizing...' : 'Sync All Now'}</span>
+            <span>{isSyncingAll ? 'Sincronizando...' : 'Sincronizar Todo Ahora'}</span>
           </button>
         </div>
       </div>
@@ -64,8 +64,8 @@ export const SynchronizationView: React.FC<SynchronizationViewProps> = ({ connec
         {/* Active Connections Panel */}
         <div className="lg:col-span-4 bg-white border border-[#E5E1DA] rounded-xl p-6 space-y-4 shadow-sm">
           <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a] border-b border-[#eae8e4] pb-3 flex items-center justify-between">
-            <span>Data Connections</span>
-            <span className="text-xs font-mono text-[#af101a]">4 Configured</span>
+            <span>Conexiones de Datos</span>
+            <span className="text-xs font-mono text-[#af101a]">4 Configuradas</span>
           </h3>
 
           <div className="space-y-3">
@@ -88,14 +88,18 @@ export const SynchronizationView: React.FC<SynchronizationViewProps> = ({ connec
                         : 'bg-[#eae8e4] text-[#5f5e5e]'
                     }`}
                   >
-                    {conn.status}
+                    {
+                      conn.status === 'Active' ? 'Activo' :
+                      conn.status === 'Error' ? 'Error' :
+                      conn.status === 'Idle' ? 'Inactivo' : conn.status
+                    }
                   </span>
                 </div>
 
                 {conn.errorMessage ? (
                   <p className="text-[10px] text-[#ba1a1a] font-bold">{conn.errorMessage}</p>
                 ) : (
-                  <p className="text-[10px] text-[#5f5e5e]">Last sync: {conn.lastSync}</p>
+                  <p className="text-[10px] text-[#5f5e5e]">Última sinc.: {conn.lastSync}</p>
                 )}
               </div>
             ))}
@@ -106,11 +110,11 @@ export const SynchronizationView: React.FC<SynchronizationViewProps> = ({ connec
         <div className="lg:col-span-8 bg-white border border-[#E5E1DA] rounded-xl p-6 space-y-6 shadow-sm">
           <div className="flex justify-between items-center border-b border-[#eae8e4] pb-3">
             <div>
-              <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Visual Field Mapper</h3>
-              <p className="text-xs text-[#5f5e5e]">Map source endpoint variables to Enterprise Catalog schema.</p>
+              <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Mapeador Visual de Campos</h3>
+              <p className="text-xs text-[#5f5e5e]">Mapea variables de origen al esquema del Catálogo Empresarial.</p>
             </div>
             <span className="px-3 py-1 bg-[#1a472a]/10 text-[#1a472a] text-xs font-bold rounded-full">
-              AI Suggestion: 94% Match
+              Sugerencia IA: 94% Coincidencia
             </span>
           </div>
 
@@ -118,7 +122,7 @@ export const SynchronizationView: React.FC<SynchronizationViewProps> = ({ connec
           <div className="grid grid-cols-3 gap-4 items-center bg-[#fbf9f5] p-6 rounded-xl border border-[#eae8e4] relative min-h-[220px]">
             {/* Left Source Fields */}
             <div className="space-y-3 z-10">
-              <span className="text-[10px] font-bold text-[#5f5e5e] uppercase tracking-wider block">Source API</span>
+              <span className="text-[10px] font-bold text-[#5f5e5e] uppercase tracking-wider block">API de Origen</span>
               <div className="p-2 bg-white rounded border border-[#e4beba] text-xs font-mono text-[#1b1c1a]">product_uid</div>
               <div className="p-2 bg-white rounded border border-[#e4beba] text-xs font-mono text-[#1b1c1a]">display_name_en</div>
               <div className="p-2 bg-white rounded border border-[#e4beba] text-xs font-mono text-[#1b1c1a]">base_price_usd</div>
@@ -127,12 +131,12 @@ export const SynchronizationView: React.FC<SynchronizationViewProps> = ({ connec
             {/* Center Animated Connecting Lines */}
             <div className="flex flex-col items-center justify-center text-center text-xs text-[#af101a] font-bold gap-2">
               <span className="material-symbols-outlined text-3xl animate-pulse">sync_alt</span>
-              <span className="text-[10px] font-mono">Auto Sync Active</span>
+              <span className="text-[10px] font-mono">Sincronización Automática Activa</span>
             </div>
 
             {/* Right Enterprise Schema Fields */}
             <div className="space-y-3 z-10">
-              <span className="text-[10px] font-bold text-[#5f5e5e] uppercase tracking-wider block">Enterprise Catalog</span>
+              <span className="text-[10px] font-bold text-[#5f5e5e] uppercase tracking-wider block">Catálogo Empresarial</span>
               <div className="p-2 bg-white rounded border border-[#e4beba] text-xs font-mono text-[#1b1c1a]">id_hash</div>
               <div className="p-2 bg-white rounded border border-[#e4beba] text-xs font-mono text-[#1b1c1a]">product_title</div>
               <div className="p-2 bg-white rounded border border-[#e4beba] text-xs font-mono text-[#1b1c1a]">unit_cost</div>
@@ -142,7 +146,7 @@ export const SynchronizationView: React.FC<SynchronizationViewProps> = ({ connec
           {/* Data Preview Box */}
           <div className="space-y-2">
             <div className="flex justify-between items-center text-xs">
-              <span className="font-bold text-[#5f5e5e]">Live Payload Sample</span>
+              <span className="font-bold text-[#5f5e5e]">Muestra de Payload en Vivo</span>
               <div className="flex gap-2 font-mono text-[10px]">
                 <button
                   onClick={() => setDataViewMode('json')}

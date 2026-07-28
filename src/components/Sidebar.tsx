@@ -8,14 +8,14 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({ currentSection, onNavigate }) => {
   const navItems: { id: NavigationSection; label: string; icon: string }[] = [
-    { id: 'dashboard', label: 'Dashboard', icon: 'dashboard' },
-    { id: 'projects', label: 'Projects', icon: 'folder_copy' },
-    { id: 'products', label: 'Products', icon: 'inventory_2' },
-    { id: 'templates', label: 'Templates', icon: 'description' },
-    { id: 'ai-assets', label: 'AI Assets', icon: 'psychology' },
-    { id: 'preview', label: 'Catalog Preview', icon: 'visibility' },
-    { id: 'sync', label: 'Synchronization', icon: 'sync' },
-    { id: 'export', label: 'Export Center', icon: 'export_notes' },
+    { id: 'dashboard', label: 'Tablero', icon: 'dashboard' },
+    { id: 'projects', label: 'Proyectos', icon: 'folder_copy' },
+    { id: 'products', label: 'Productos', icon: 'inventory_2' },
+    { id: 'templates', label: 'Plantillas', icon: 'description' },
+    { id: 'ai-assets', label: 'Activos IA', icon: 'psychology' },
+    { id: 'preview', label: 'Vista Previa', icon: 'visibility' },
+    { id: 'sync', label: 'Sincronización', icon: 'sync' },
+    { id: 'export', label: 'Exportación', icon: 'export_notes' },
   ];
 
   return (
@@ -29,8 +29,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentSection, onNavigate }) 
           <span className="material-symbols-outlined filled-icon text-[24px]">dataset</span>
         </div>
         <div>
-          <h1 className="font-geist text-[18px] font-bold text-[#af101a] leading-tight">AI Catalog</h1>
-          <p className="text-[10px] font-geist font-bold text-[#5f5e5e] uppercase tracking-widest opacity-80">ENTERPRISE CORE</p>
+          <h1 className="font-geist text-[18px] font-bold text-[#af101a] leading-tight">Catálogo IA</h1>
+          <p className="text-[10px] font-geist font-bold text-[#5f5e5e] uppercase tracking-widest opacity-80">NÚCLEO EMPRESARIAL</p>
         </div>
       </div>
 
@@ -68,7 +68,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentSection, onNavigate }) 
           }`}
         >
           <span className="material-symbols-outlined text-[20px]">settings</span>
-          <span>Settings</span>
+          <span>Ajustes</span>
         </button>
 
         {/* User Card */}
@@ -80,7 +80,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentSection, onNavigate }) 
           />
           <div className="min-w-0 flex-1">
             <p className="text-xs font-bold text-[#1b1c1a] truncate leading-tight">Alex Rivera</p>
-            <p className="text-[10px] text-[#5f5e5e] truncate">Global Admin</p>
+            <p className="text-[10px] text-[#5f5e5e] truncate">Admin Global</p>
           </div>
         </div>
       </div>

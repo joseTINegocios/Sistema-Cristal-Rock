@@ -35,20 +35,20 @@ export const TopNav: React.FC<TopNavProps> = ({
       case 'sync':
         return 'Catalog Manager';
       case 'export':
-        return 'Export Center';
+        return 'Centro de Exportación';
       case 'settings':
-        return 'Catalog Settings';
+        return 'Ajustes de Catálogo';
       default:
-        return 'Catalog Manager';
+        return 'Gestor de Catálogo';
     }
   };
 
   const getBreadcrumb = () => {
     switch (currentSection) {
       case 'templates':
-        return 'Home / Templates / Winter_Catalog_2024.indd';
+        return 'Inicio / Plantillas / Winter_Catalog_2024.indd';
       case 'preview':
-        return 'Winter Collection 2024';
+        return 'Colección Invierno 2024';
       default:
         return null;
     }
@@ -79,7 +79,7 @@ export const TopNav: React.FC<TopNavProps> = ({
                   : 'text-[#5f5e5e] hover:text-[#af101a]'
               }`}
             >
-              Assets Library
+              Biblioteca de Activos
             </button>
             <button
               onClick={() => onAISubViewChange('cover-generator')}
@@ -89,7 +89,7 @@ export const TopNav: React.FC<TopNavProps> = ({
                   : 'text-[#5f5e5e] hover:text-[#af101a]'
               }`}
             >
-              Cover Generator
+              Generador de Portadas
             </button>
             <button
               onClick={() => onAISubViewChange('icon-designer')}
@@ -99,7 +99,7 @@ export const TopNav: React.FC<TopNavProps> = ({
                   : 'text-[#5f5e5e] hover:text-[#af101a]'
               }`}
             >
-              Icon Designer
+              Diseñador de Iconos
             </button>
             <button
               onClick={() => onAISubViewChange('extractor')}
@@ -109,7 +109,7 @@ export const TopNav: React.FC<TopNavProps> = ({
                   : 'text-[#5f5e5e] hover:text-[#af101a]'
               }`}
             >
-              Component Extractor
+              Extractor de Componentes
             </button>
           </nav>
         )}
@@ -124,7 +124,7 @@ export const TopNav: React.FC<TopNavProps> = ({
           type="text"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Search catalogs, assets, products..."
+          placeholder="Buscar catálogos, activos, productos..."
           className="w-full bg-[#f5f3ef] border border-[#e4beba]/60 rounded-full py-1.5 pl-10 pr-4 text-xs text-[#1b1c1a] focus:ring-2 focus:ring-[#af101a]/20 focus:border-[#af101a] outline-none transition-all"
         />
       </div>
@@ -132,7 +132,7 @@ export const TopNav: React.FC<TopNavProps> = ({
       {/* Header Actions */}
       <div className="flex items-center gap-4">
         <button 
-          title="Notifications" 
+          title="Notificaciones" 
           className="relative p-2 text-[#5f5e5e] hover:text-[#af101a] hover:bg-[#eae8e4] rounded-full transition-all"
         >
           <span className="material-symbols-outlined text-[20px]">notifications</span>
@@ -140,7 +140,7 @@ export const TopNav: React.FC<TopNavProps> = ({
         </button>
 
         <button 
-          title="Help & Support" 
+          title="Ayuda y Soporte" 
           className="p-2 text-[#5f5e5e] hover:text-[#af101a] hover:bg-[#eae8e4] rounded-full transition-all"
         >
           <span className="material-symbols-outlined text-[20px]">help_outline</span>
@@ -152,14 +152,14 @@ export const TopNav: React.FC<TopNavProps> = ({
             className="hidden sm:flex items-center gap-2 px-4 py-2 bg-[#af101a] text-white rounded-lg font-geist font-bold text-xs hover:brightness-110 active:scale-95 transition-all shadow-sm"
           >
             <span className="material-symbols-outlined text-[16px]">add</span>
-            <span>New Item</span>
+            <span>Nuevo Elemento</span>
           </button>
         )}
 
         <div className="pl-3 border-l border-[#eae8e4] flex items-center gap-3">
           <div className="text-right hidden xl:block">
             <p className="text-xs font-bold text-[#1b1c1a]">Alex Rivera</p>
-            <p className="text-[10px] text-[#5f5e5e] uppercase tracking-wider">Catalog Admin</p>
+            <p className="text-[10px] text-[#5f5e5e] uppercase tracking-wider">Admin de Catálogo</p>
           </div>
           <div className="w-9 h-9 rounded-full border-2 border-[#e4beba] overflow-hidden">
             <img

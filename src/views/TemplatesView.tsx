@@ -50,7 +50,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
             Winter_Catalog_2024.indd
           </h2>
           <p className="text-xs text-[#5f5e5e]">
-            InDesign Master Layout • 12 Active Variable Links • Last saved 10m ago
+            Diseño Maestro InDesign • 12 Enlaces de Variables Activos • Último guardado hace 10m
           </p>
         </div>
 
@@ -60,11 +60,11 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
             className="px-4 py-2 border border-[#eae8e4] hover:bg-[#f5f3ef] rounded-lg text-xs font-bold text-[#1b1c1a] flex items-center gap-1.5 transition-colors"
           >
             <span className="material-symbols-outlined text-[18px]">history</span>
-            Version History
+Historial de Versiones
           </button>
           <button className="px-4 py-2 bg-[#af101a] text-white rounded-lg text-xs font-bold hover:brightness-110 flex items-center gap-1.5 shadow-sm">
             <span className="material-symbols-outlined text-[18px]">cloud_upload</span>
-            Upload New INDD
+            Subir Nuevo INDD
           </button>
         </div>
       </div>
@@ -77,14 +77,14 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
           <div className="bg-[#f5f3ef] border-b border-[#eae8e4] px-4 py-2.5 flex justify-between items-center text-xs">
             <div className="flex items-center gap-2 text-[#5f5e5e]">
               <span className="material-symbols-outlined text-[16px]">crop_original</span>
-              <span className="font-bold text-[#1b1c1a]">Spread 01-02 Preview</span>
+              <span className="font-bold text-[#1b1c1a]">Vista Previa Spread 01-02</span>
             </div>
 
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setZoomLevel((z) => Math.max(50, z - 10))}
                 className="p-1 hover:bg-[#eae8e4] rounded text-[#5f5e5e]"
-                title="Zoom Out"
+                title="Alejar"
               >
                 <span className="material-symbols-outlined text-[18px]">remove</span>
               </button>
@@ -92,7 +92,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
               <button
                 onClick={() => setZoomLevel((z) => Math.min(150, z + 10))}
                 className="p-1 hover:bg-[#eae8e4] rounded text-[#5f5e5e]"
-                title="Zoom In"
+                title="Acercar"
               >
                 <span className="material-symbols-outlined text-[18px]">add</span>
               </button>
@@ -101,7 +101,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
                 onClick={() => setZoomLevel(85)}
                 className="p-1 hover:bg-[#eae8e4] rounded text-[#5f5e5e] text-[11px] font-bold"
               >
-                Fit
+                Ajustar
               </button>
             </div>
           </div>
@@ -195,7 +195,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
           {/* Drag & Drop INDD Overlay Notice */}
           <div className="p-3 bg-[#f5f3ef] border-t border-[#eae8e4] text-center text-xs text-[#5f5e5e] flex items-center justify-center gap-2">
             <span className="material-symbols-outlined text-[18px] text-[#af101a]">upload_file</span>
-            <span>Drag & drop updated <strong>.INDD</strong> or <strong>.IDML</strong> files here to resync geometry</span>
+            <span>Arrastra y suelta archivos <strong>.INDD</strong> o <strong>.IDML</strong> actualizados aquí para resincronizar la geometría</span>
           </div>
         </div>
 
@@ -203,17 +203,17 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
         <div className="lg:col-span-4 bg-white border border-[#E5E1DA] rounded-xl p-6 space-y-6 shadow-sm">
           <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a] border-b border-[#eae8e4] pb-3 flex items-center gap-2">
             <span className="material-symbols-outlined text-[#af101a]">find_in_page</span>
-            InDesign Analysis
+            Análisis InDesign
           </h3>
 
           {/* Extracted Variables list */}
           <div>
             <div className="flex justify-between items-center mb-2">
               <span className="text-xs font-bold text-[#5f5e5e] uppercase tracking-wider">
-                Extracted Variables (4)
+                Variables Extraídas (4)
               </span>
               <span className="text-[10px] bg-[#1a472a]/10 text-[#1a472a] px-2 py-0.5 rounded font-bold">
-                Auto-Detected
+                Auto-Detectadas
               </span>
             </div>
             <div className="space-y-1.5">
@@ -248,7 +248,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
           {/* Detected Swatches */}
           <div>
             <span className="text-xs font-bold text-[#5f5e5e] uppercase tracking-wider block mb-2">
-              Detected Swatches
+              Muestras Detectadas
             </span>
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1.5 bg-[#f5f3ef] px-2.5 py-1.5 rounded border border-[#eae8e4]">
@@ -269,15 +269,15 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
           {/* Layout Dimensions Specs */}
           <div className="p-3 bg-[#f5f3ef] rounded-xl border border-[#eae8e4] space-y-2 text-xs">
             <div className="flex justify-between text-[#5f5e5e]">
-              <span>Dimensions:</span>
+              <span>Dimensiones:</span>
               <span className="font-mono font-bold text-[#1b1c1a]">210 x 297 mm (A4)</span>
             </div>
             <div className="flex justify-between text-[#5f5e5e]">
-              <span>Bleed:</span>
+              <span>Sangrado:</span>
               <span className="font-mono font-bold text-[#1b1c1a]">3 mm All Sides</span>
             </div>
             <div className="flex justify-between text-[#5f5e5e]">
-              <span>Embedded Fonts:</span>
+              <span>Fuentes Incrustadas:</span>
               <span className="font-mono font-bold text-[#1b1c1a]">Inter, Geist Display</span>
             </div>
           </div>
@@ -288,9 +288,9 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
       <div className="bg-white border border-[#E5E1DA] rounded-xl p-6 shadow-sm space-y-4">
         <div className="flex justify-between items-center border-b border-[#eae8e4] pb-3">
           <div>
-            <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Data Mapping Matrix</h3>
+            <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a]">Matriz de Mapeo de Datos</h3>
             <p className="text-xs text-[#5f5e5e]">
-              Bind InDesign tags directly to enterprise database fields or PIM attributes.
+              Vincula etiquetas InDesign directamente a campos de base de datos empresariales o atributos PIM.
             </p>
           </div>
 
@@ -302,7 +302,7 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
             <span className={`material-symbols-outlined text-[16px] ${isMappingLoading ? 'animate-spin' : ''}`}>
               auto_awesome
             </span>
-            <span>{isMappingLoading ? 'Analyzing Schema...' : 'Auto-Map AI'}</span>
+            <span>{isMappingLoading ? 'Analizando Esquema...' : 'Auto-Mapeo IA'}</span>
           </button>
         </div>
 
@@ -310,12 +310,12 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
           <table className="w-full text-left text-xs text-[#1b1c1a]">
             <thead className="bg-[#f5f3ef] font-geist text-[#5f5e5e] uppercase text-[10px] tracking-wider border-b border-[#eae8e4]">
               <tr>
-                <th className="p-3">Template Tag</th>
-                <th className="p-3">Source System</th>
-                <th className="p-3">Field Mapping</th>
-                <th className="p-3">Fallback Value</th>
-                <th className="p-3">Status</th>
-                <th className="p-3 text-right">Action</th>
+                <th className="p-3">Etiqueta de Plantilla</th>
+                <th className="p-3">Sistema de Origen</th>
+                <th className="p-3">Mapeo de Campo</th>
+                <th className="p-3">Valor de Respaldo</th>
+                <th className="p-3">Estado</th>
+                <th className="p-3 text-right">Acción</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#eae8e4]">
@@ -333,12 +333,16 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
                           : 'bg-amber-100 text-amber-800'
                       }`}
                     >
-                      {v.status}
+{
+                    v.status === 'Validated' ? 'Validado' :
+                    v.status === 'Analyzing' ? 'Analizando' :
+                    v.status === 'Pending' ? 'Pendiente' : v.status
+                  }
                     </span>
                   </td>
                   <td className="p-3 text-right">
                     <button className="text-[#af101a] hover:underline font-bold text-[11px]">
-                      Edit Link
+                      Editar Enlace
                     </button>
                   </td>
                 </tr>
@@ -352,27 +356,27 @@ export const TemplatesView: React.FC<TemplatesViewProps> = ({
       {showVersionHistory && (
         <div className="bg-white border border-[#E5E1DA] rounded-xl p-6 shadow-sm space-y-4 animate-fade-in">
           <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a] border-b border-[#eae8e4] pb-2">
-            InDesign Layout Revisions
+            Revisiones de Diseño InDesign
           </h3>
           <div className="space-y-3 text-xs">
             <div className="p-3 bg-[#f5f3ef] rounded-lg border border-[#af101a]/30 flex justify-between items-center">
               <div>
                 <p className="font-bold text-[#1b1c1a] flex items-center gap-2">
-                  Version 4 (Current)
-                  <span className="px-2 py-0.5 bg-[#af101a] text-white rounded text-[9px]">LIVE</span>
+                  Versión 4 (Actual)
+                  <span className="px-2 py-0.5 bg-[#af101a] text-white rounded text-[9px]">EN VIVO</span>
                 </p>
-                <p className="text-[10px] text-[#5f5e5e]">Oct 24, 2026 • By Alex Rivera • "Updated grid alignment for luxury products"</p>
+                <p className="text-[10px] text-[#5f5e5e]">Oct 24, 2026 • Por Alex Rivera • "Alineación de cuadrícula actualizada para productos de lujo"</p>
               </div>
-              <button className="text-[#5f5e5e] text-xs font-bold" disabled>Current</button>
+              <button className="text-[#5f5e5e] text-xs font-bold" disabled>Actual</button>
             </div>
 
             <div className="p-3 bg-white rounded-lg border border-[#eae8e4] flex justify-between items-center hover:bg-[#fbf9f5]">
               <div>
-                <p className="font-bold text-[#1b1c1a]">Version 3 (Archive)</p>
-                <p className="text-[10px] text-[#5f5e5e]">Oct 10, 2026 • By Design Ops • "Initial layout release"</p>
+                <p className="font-bold text-[#1b1c1a]">Versión 3 (Archivo)</p>
+                <p className="text-[10px] text-[#5f5e5e]">Oct 10, 2026 • Por Design Ops • "Versión inicial del diseño"</p>
               </div>
               <button className="text-[#af101a] hover:underline font-bold text-xs">
-                Restore
+                Restaurar
               </button>
             </div>
           </div>

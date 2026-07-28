@@ -37,10 +37,10 @@ export const ExportCenterView: React.FC<ExportCenterViewProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h2 className="font-geist text-[28px] font-semibold text-[#1b1c1a]">
-            Export Center & Version Comparison
+            Centro de Exportación y Comparación de Versiones
           </h2>
           <p className="text-xs text-[#5f5e5e]">
-            Compile enterprise print-ready PDFs, digital asset packages, and inspect visual diffs.
+            Compila PDFs listos para impresión empresarial, paquetes de activos digitales e inspecciona diferencias visuales.
           </p>
         </div>
       </div>
@@ -50,13 +50,13 @@ export const ExportCenterView: React.FC<ExportCenterViewProps> = ({
         <div className="lg:col-span-7 bg-white border border-[#E5E1DA] rounded-xl p-6 space-y-6 shadow-sm">
           <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a] border-b border-[#eae8e4] pb-3 flex items-center gap-2">
             <span className="material-symbols-outlined text-[#af101a]">ios_share</span>
-            Configure Export
+            Configurar Exportación
           </h3>
 
           {/* Format Selector */}
           <div className="space-y-2">
             <label className="block text-xs font-bold text-[#5f5e5e] uppercase tracking-wider">
-              Output Format
+              Formato de Salida
             </label>
             <div className="grid grid-cols-3 gap-3">
               <button
@@ -66,7 +66,7 @@ export const ExportCenterView: React.FC<ExportCenterViewProps> = ({
                 }`}
               >
                 <span className="material-symbols-outlined text-2xl">picture_as_pdf</span>
-                <span>PDF Document</span>
+                <span>Documento PDF</span>
               </button>
 
               <button
@@ -76,7 +76,7 @@ export const ExportCenterView: React.FC<ExportCenterViewProps> = ({
                 }`}
               >
                 <span className="material-symbols-outlined text-2xl">image</span>
-                <span>PNG Package</span>
+                <span>Paquete PNG</span>
               </button>
 
               <button
@@ -86,7 +86,7 @@ export const ExportCenterView: React.FC<ExportCenterViewProps> = ({
                 }`}
               >
                 <span className="material-symbols-outlined text-2xl">folder_zip</span>
-                <span>ZIP Bundle</span>
+                <span>Paquete ZIP</span>
               </button>
             </div>
           </div>
@@ -94,7 +94,7 @@ export const ExportCenterView: React.FC<ExportCenterViewProps> = ({
           {/* Export Toggles & Inputs */}
           <div className="space-y-3 pt-2 border-t border-[#eae8e4]">
             <div className="flex justify-between items-center text-xs">
-              <span className="font-bold text-[#1b1c1a]">Export Only Modified Pages</span>
+              <span className="font-bold text-[#1b1c1a]">Exportar Solo Páginas Modificadas</span>
               <input
                 type="checkbox"
                 checked={onlyModified}
@@ -104,7 +104,7 @@ export const ExportCenterView: React.FC<ExportCenterViewProps> = ({
             </div>
 
             <div className="flex justify-between items-center text-xs">
-              <span className="font-bold text-[#1b1c1a]">Include Metadata Tags & QR Codes</span>
+              <span className="font-bold text-[#1b1c1a]">Incluir Etiquetas de Metadatos y Códigos QR</span>
               <input
                 type="checkbox"
                 checked={includeMetadata}
@@ -114,7 +114,7 @@ export const ExportCenterView: React.FC<ExportCenterViewProps> = ({
             </div>
 
             <div className="space-y-1 pt-2">
-              <label className="block text-[11px] font-bold text-[#5f5e5e]">Version Tag Label</label>
+              <label className="block text-[11px] font-bold text-[#5f5e5e]">Etiqueta de Versión</label>
               <input
                 type="text"
                 value={versionLabel}
@@ -132,14 +132,14 @@ export const ExportCenterView: React.FC<ExportCenterViewProps> = ({
             <span className={`material-symbols-outlined text-[20px] ${isExporting ? 'animate-spin' : ''}`}>
               download
             </span>
-            <span>{isExporting ? 'Compiling Package...' : 'Start Global Export'}</span>
+            <span>{isExporting ? 'Compilando Paquete...' : 'Iniciar Exportación Global'}</span>
           </button>
         </div>
 
         {/* Export History Sidebar (Span 5) */}
         <div className="lg:col-span-5 bg-white border border-[#E5E1DA] rounded-xl p-6 space-y-4 shadow-sm">
           <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a] border-b border-[#eae8e4] pb-3">
-            Export History & Logs
+            Historial de Exportación y Registros
           </h3>
 
           <div className="space-y-3">
@@ -162,7 +162,11 @@ export const ExportCenterView: React.FC<ExportCenterViewProps> = ({
                         : 'bg-[#ffdad6] text-[#ba1a1a]'
                     }`}
                   >
-                    {item.status}
+                    {
+                      item.status === 'Success' ? 'Éxito' :
+                      item.status === 'Processing' ? 'Procesando' :
+                      item.status === 'Failed' ? 'Fallido' : item.status
+                    }
                   </span>
                 </div>
 

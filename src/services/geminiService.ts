@@ -1,11 +1,11 @@
 import { GoogleGenAI } from '@google/genai';
 
-// Safe lazy initialization for client/server
+// Inicialización diferida segura para cliente/servidor
 let aiClient: GoogleGenAI | null = null;
 
 function getAIClient(): GoogleGenAI | null {
   if (!aiClient) {
-    // Vite client-side or environment process check
+    // Verificación de proceso de entorno o cliente Vite
     const apiKey = typeof process !== 'undefined' && process.env ? process.env.GEMINI_API_KEY : undefined;
     if (apiKey) {
       aiClient = new GoogleGenAI({ apiKey });
@@ -38,11 +38,11 @@ Respond strictly in valid JSON format:
     }
   }
 
-  // Fallback defaults if API key is not present or error occurs
+  // Valores predeterminados si la clave API no está presente o ocurre un error
   return {
     title: prompt.split(' ')[0] ? `${prompt.split(' ')[0].toUpperCase()} TIMELESS` : 'WINTER TIMELESS',
     subtitle: 'COLLECTION 2026',
-    description: `A curated selection of ${style.toLowerCase()} horological excellence for the modern enterprise season.`
+    description: `Una selección curada de excelencia horológica ${style.toLowerCase()} para la temporada empresarial moderna.`
   };
 }
 
@@ -63,7 +63,7 @@ export async function autoMapFields(sourceFields: string[], targetFields: string
     }
   }
 
-  // Fallback map
+  // Mapa de respaldo
   return {
     product_uid: 'id_hash',
     display_name_en: 'product_title',

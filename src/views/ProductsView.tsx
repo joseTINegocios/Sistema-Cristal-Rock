@@ -77,10 +77,10 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
             onChange={(e) => setFilterStatus(e.target.value)}
             className="px-3 py-2 bg-[#f5f3ef] border border-[#e4beba]/60 rounded-lg text-xs font-bold text-[#1b1c1a] focus:outline-none"
           >
-            <option value="all">All Statuses</option>
-            <option value="Active">Active</option>
-            <option value="Review">Review</option>
-            <option value="Out of Stock">Out of Stock</option>
+            <option value="all">Todos los Estados</option>
+            <option value="Active">Activo</option>
+            <option value="Review">Revisión</option>
+            <option value="Out of Stock">Agotado</option>
           </select>
 
           <select
@@ -88,11 +88,11 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
             onChange={(e) => setFilterCategory(e.target.value)}
             className="px-3 py-2 bg-[#f5f3ef] border border-[#e4beba]/60 rounded-lg text-xs font-bold text-[#1b1c1a] focus:outline-none"
           >
-            <option value="all">All Categories</option>
+            <option value="all">Todas las Categorías</option>
             <option value="Wearables">Wearables</option>
             <option value="Audio Gear">Audio Gear</option>
-            <option value="Kitchen">Kitchen</option>
-            <option value="Office">Office</option>
+            <option value="Kitchen">Cocina</option>
+            <option value="Office">Oficina</option>
           </select>
 
           {(filterCategory !== 'all' || filterStatus !== 'all') && (
@@ -103,7 +103,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
               }}
               className="text-xs text-[#af101a] font-bold hover:underline"
             >
-              Clear Filters
+              Limpiar Filtros
             </button>
           )}
         </div>
@@ -111,14 +111,14 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
         <div className="flex items-center gap-2">
           <button className="px-3 py-2 border border-[#eae8e4] hover:bg-[#f5f3ef] rounded-lg text-xs font-bold text-[#5f5e5e] flex items-center gap-1.5">
             <span className="material-symbols-outlined text-[16px]">file_download</span>
-            Export CSV
+            Exportar CSV
           </button>
           <button
             onClick={() => setShowAddModal(true)}
             className="px-4 py-2 bg-[#af101a] text-white rounded-lg text-xs font-bold hover:brightness-110 flex items-center gap-1.5 shadow-sm"
           >
             <span className="material-symbols-outlined text-[16px]">add</span>
-            New Product
+Nuevo Producto
           </button>
         </div>
       </div>
@@ -134,12 +134,12 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
                   <th className="p-4 w-10">
                     <input type="checkbox" className="rounded border-[#e4beba]" />
                   </th>
-                  <th className="p-4">Product Info</th>
-                  <th className="p-4">Category & Brand</th>
-                  <th className="p-4">Price</th>
-                  <th className="p-4">Status</th>
-                  <th className="p-4">Updated</th>
-                  <th className="p-4 text-right">Catalogs</th>
+                  <th className="p-4">Info del Producto</th>
+                  <th className="p-4">Categoría y Marca</th>
+                  <th className="p-4">Precio</th>
+                  <th className="p-4">Estado</th>
+                  <th className="p-4">Actualizado</th>
+                  <th className="p-4 text-right">Catálogos</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#eae8e4]">
@@ -179,17 +179,17 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
                       <td className="p-4">
                         {p.status === 'Active' && (
                           <span className="px-2.5 py-1 bg-[#1a472a]/10 text-[#1a472a] rounded-full text-[10px] font-bold">
-                            Active
+                            Activo
                           </span>
                         )}
                         {p.status === 'Review' && (
                           <span className="px-2.5 py-1 bg-[#d3e4fe] text-[#0b1c30] rounded-full text-[10px] font-bold">
-                            Review
+                            Revisión
                           </span>
                         )}
                         {p.status === 'Out of Stock' && (
                           <span className="px-2.5 py-1 bg-[#eae8e4] text-[#5f5e5e] rounded-full text-[10px] font-bold">
-                            Out of Stock
+                            Agotado
                           </span>
                         )}
                       </td>
@@ -197,10 +197,10 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
                       <td className="p-4 text-right">
                         {p.catalogsCount.length > 0 ? (
                           <span className="px-2 py-1 bg-[#af101a]/10 text-[#af101a] font-bold rounded text-[11px]">
-                            {p.catalogsCount.reduce((a, b) => a + b, 0)} Placements
+                            {p.catalogsCount.reduce((a, b) => a + b, 0)} Colocaciones
                           </span>
                         ) : (
-                          <span className="text-[10px] text-[#5f5e5e] italic">Unassigned</span>
+                          <span className="text-[10px] text-[#5f5e5e] italic">Sin asignar</span>
                         )}
                       </td>
                     </tr>
@@ -217,7 +217,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
             <div className="flex items-center justify-between border-b border-[#eae8e4] pb-3">
               <h3 className="font-geist text-[18px] font-bold text-[#1b1c1a] flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#af101a]">analytics</span>
-                Product Insights
+Información del Producto
               </h3>
               <button
                 onClick={() => setSelectedProduct(null)}
@@ -244,26 +244,26 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
             {/* Sync History Timeline */}
             <div>
               <h5 className="text-xs font-bold text-[#5f5e5e] uppercase tracking-wider mb-3">
-                Synchronization History
+                Historial de Sincronización
               </h5>
               <div className="space-y-3 border-l-2 border-[#eae8e4] pl-3 ml-2">
                 <div className="relative">
                   <span className="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-[#af101a]"></span>
-                  <p className="text-xs font-bold text-[#1b1c1a]">PIM Master Price Sync</p>
-                  <p className="text-[10px] text-[#5f5e5e]">Today, 14:22 • Updated by SAP Connector</p>
+                  <p className="text-xs font-bold text-[#1b1c1a]">Sincronización Maestra de Precios PIM</p>
+                  <p className="text-[10px] text-[#5f5e5e]">Hoy, 14:22 • Actualizado por SAP Connector</p>
                 </div>
                 <div className="relative">
                   <span className="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-[#eae8e4]"></span>
-                  <p className="text-xs font-bold text-[#1b1c1a]">AI Copy Polish</p>
-                  <p className="text-[10px] text-[#5f5e5e]">Yesterday, 09:15 • Semantic Agent v4</p>
+                  <p className="text-xs font-bold text-[#1b1c1a]">Pulido de Copia IA</p>
+                  <p className="text-[10px] text-[#5f5e5e]">Ayer, 09:15 • Semantic Agent v4</p>
                 </div>
               </div>
             </div>
 
-            {/* Affected Catalogs */}
+            {/* Catálogos Afectados */}
             <div>
               <h5 className="text-xs font-bold text-[#5f5e5e] uppercase tracking-wider mb-2">
-                Affected Catalogs ({selectedProduct.details?.affectedCatalogs?.length || 0})
+                Catálogos Afectados ({selectedProduct.details?.affectedCatalogs?.length || 0})
               </h5>
               <div className="space-y-2">
                 {selectedProduct.details?.affectedCatalogs?.map((cat, idx) => (
@@ -274,7 +274,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
                     </div>
                     {cat.feature && (
                       <span className="px-2 py-0.5 bg-[#ffdad6] text-[#ba1a1a] font-bold text-[9px] rounded uppercase">
-                        Feature
+                        Destacado
                       </span>
                     )}
                   </div>
@@ -285,10 +285,10 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
             {/* Last Major Value Change */}
             <div className="p-3 bg-[#ffdad6]/20 border border-[#e4beba]/60 rounded-xl space-y-1">
               <p className="text-[10px] font-bold text-[#af101a] uppercase tracking-wider">
-                Last Major Value Change
+                Último Cambio de Valor Importante
               </p>
               <div className="flex justify-between items-center text-xs">
-                <span className="text-[#5f5e5e]">Base Wholesale Price</span>
+                <span className="text-[#5f5e5e]">Precio Base al por Mayor</span>
                 <span className="font-mono font-bold text-[#1b1c1a]">
                   $310.00 → <span className="text-[#af101a]">${selectedProduct.details?.wholesalePrice || selectedProduct.price * 0.7}</span>
                 </span>
@@ -298,10 +298,10 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
             {/* Drawer Actions */}
             <div className="flex gap-2 pt-2">
               <button className="flex-1 py-2.5 bg-[#f5f3ef] hover:bg-[#eae8e4] text-[#1b1c1a] font-bold text-xs rounded-lg border border-[#eae8e4] transition-colors">
-                Compare Revision
+                Comparar Revisión
               </button>
               <button className="flex-1 py-2.5 bg-[#af101a] hover:brightness-110 text-white font-bold text-xs rounded-lg shadow-sm transition-colors">
-                Publish Updates
+                Publicar Actualizaciones
               </button>
             </div>
           </div>
@@ -313,7 +313,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
         <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-md w-full p-6 border border-[#eae8e4] shadow-2xl space-y-4">
             <div className="flex justify-between items-center border-b border-[#eae8e4] pb-3">
-              <h3 className="font-geist text-lg font-bold text-[#1b1c1a]">Add New Product Item</h3>
+              <h3 className="font-geist text-lg font-bold text-[#1b1c1a]">Agregar Nuevo Producto</h3>
               <button onClick={() => setShowAddModal(false)} className="text-[#5f5e5e] hover:text-[#af101a]">
                 <span className="material-symbols-outlined">close</span>
               </button>
@@ -321,32 +321,32 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
 
             <form onSubmit={handleCreateProduct} className="space-y-4 text-xs">
               <div>
-                <label className="block font-bold text-[#5f5e5e] mb-1">SKU Identifier</label>
+                <label className="block font-bold text-[#5f5e5e] mb-1">Identificador SKU</label>
                 <input
                   type="text"
                   required
                   value={newSku}
                   onChange={(e) => setNewSku(e.target.value)}
-                  placeholder="e.g. WCH-2026-X"
+                  placeholder="ej. WCH-2026-X"
                   className="w-full bg-[#f5f3ef] border border-[#e4beba] rounded-lg p-2.5 focus:outline-none focus:border-[#af101a] font-mono"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-[#5f5e5e] mb-1">Product Title</label>
+                <label className="block font-bold text-[#5f5e5e] mb-1">Nombre del Producto</label>
                 <input
                   type="text"
                   required
                   value={newName}
                   onChange={(e) => setNewName(e.target.value)}
-                  placeholder="e.g. Zenith Chronograph Gold"
+                  placeholder="ej. Zenith Chronograph Gold"
                   className="w-full bg-[#f5f3ef] border border-[#e4beba] rounded-lg p-2.5 focus:outline-none focus:border-[#af101a]"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block font-bold text-[#5f5e5e] mb-1">Category</label>
+                  <label className="block font-bold text-[#5f5e5e] mb-1">Categoría</label>
                   <select
                     value={newCategory}
                     onChange={(e) => setNewCategory(e.target.value)}
@@ -354,13 +354,13 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
                   >
                     <option value="Wearables">Wearables</option>
                     <option value="Audio Gear">Audio Gear</option>
-                    <option value="Kitchen">Kitchen</option>
-                    <option value="Office">Office</option>
+                    <option value="Kitchen">Cocina</option>
+                    <option value="Office">Oficina</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block font-bold text-[#5f5e5e] mb-1">Price ($)</label>
+                  <label className="block font-bold text-[#5f5e5e] mb-1">Precio ($)</label>
                   <input
                     type="number"
                     step="0.01"
@@ -378,13 +378,13 @@ export const ProductsView: React.FC<ProductsViewProps> = ({
                   onClick={() => setShowAddModal(false)}
                   className="px-4 py-2 border border-[#eae8e4] rounded-lg font-bold text-[#5f5e5e]"
                 >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-5 py-2 bg-[#af101a] text-white font-bold rounded-lg hover:brightness-110 shadow-md"
-                >
-                  Save Product
+Cancelar
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-5 py-2 bg-[#af101a] text-white font-bold rounded-lg hover:brightness-110 shadow-md"
+                  >
+                    Guardar Producto
                 </button>
               </div>
             </form>

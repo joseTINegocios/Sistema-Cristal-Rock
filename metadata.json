@@ -1,6 +1,6 @@
 {
-  "name": "AI Catalog - Enterprise Core",
-  "description": "Enterprise AI-driven catalog orchestration, template management, cover design, synchronization, and asset library platform.",
+  "name": "Catálogo IA - Núcleo Empresarial",
+  "description": "Plataforma empresarial de orquestación de catálogos impulsada por IA, gestión de plantillas, diseño de portadas, sincronización y biblioteca de activos.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

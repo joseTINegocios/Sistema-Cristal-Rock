@@ -53,10 +53,10 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
         <div>
           <h2 className="font-geist text-[32px] font-semibold text-[#1b1c1a] tracking-tight">
-            Catalog Projects
+            Proyectos de Catálogo
           </h2>
           <p className="text-[#5f5e5e] text-base mt-1">
-            Manage and orchestrate your enterprise AI-driven catalogs.
+            Gestiona y orquesta tus catálogos empresariales impulsados por IA.
           </p>
         </div>
 
@@ -67,10 +67,10 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
               onChange={(e) => setFilterStatus(e.target.value)}
               className="px-4 py-2.5 bg-[#eae8e4] text-[#1b1c1a] rounded-lg text-xs font-bold focus:outline-none cursor-pointer pr-8"
             >
-              <option value="all">All Statuses</option>
-              <option value="syncing">Syncing</option>
-              <option value="published">Published</option>
-              <option value="draft">Draft</option>
+              <option value="all">Todos los Estados</option>
+              <option value="syncing">Sincronizando</option>
+              <option value="published">Publicado</option>
+              <option value="draft">Borrador</option>
             </select>
           </div>
 
@@ -79,7 +79,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
             className="px-5 py-2.5 bg-[#af101a] text-white rounded-lg font-bold text-xs hover:brightness-110 shadow-lg shadow-[#af101a]/10 transition-all flex items-center gap-2 active:scale-[0.98]"
           >
             <span className="material-symbols-outlined text-[18px]">add</span>
-            Create Project
+            Crear Proyecto
           </button>
         </div>
       </div>
@@ -106,19 +106,19 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                   {project.status === 'Syncing' && (
                     <span className="px-3 py-1 bg-[#d32f2f] text-white text-[10px] font-bold rounded-full uppercase tracking-widest flex items-center gap-1.5 animate-pulse">
                       <span className="material-symbols-outlined text-[12px] filled-icon">sync</span>
-                      Syncing
+                      Sincronizando
                     </span>
                   )}
                   {project.status === 'Published' && (
                     <span className="px-3 py-1 bg-[#1a472a] text-white text-[10px] font-bold rounded-full uppercase tracking-widest flex items-center gap-1.5">
                       <span className="material-symbols-outlined text-[12px] filled-icon">check_circle</span>
-                      Published
+                      Publicado
                     </span>
                   )}
                   {project.status === 'Draft' && (
                     <span className="px-3 py-1 bg-[#e4e2de] text-[#5f5e5e] text-[10px] font-bold rounded-full uppercase tracking-widest flex items-center gap-1.5">
                       <span className="material-symbols-outlined text-[12px] filled-icon">edit_note</span>
-                      Draft
+                      Borrador
                     </span>
                   )}
                 </div>
@@ -142,7 +142,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                         {project.productsCount.toLocaleString()}
                       </p>
                       <p className="text-[10px] text-[#5f5e5e] uppercase font-bold tracking-tight">
-                        Products
+                        Productos
                       </p>
                     </div>
                     <div className="text-center">
@@ -150,7 +150,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                         {project.pagesCount.toLocaleString()}
                       </p>
                       <p className="text-[10px] text-[#5f5e5e] uppercase font-bold tracking-tight">
-                        Pages
+                        Páginas
                       </p>
                     </div>
                   </div>
@@ -162,7 +162,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                   <div className="p-3 bg-[#f5f3ef] rounded-lg border border-[#eae8e4]">
                     <p className="text-xs font-bold text-[#5f5e5e] flex items-center gap-2 mb-2">
                       <span className="material-symbols-outlined text-[16px] text-[#af101a]">database</span>
-                      Data Sources
+                      Fuentes de Datos
                     </p>
                     {project.dataSources.length > 0 ? (
                       <div className="flex flex-wrap gap-1.5">
@@ -176,7 +176,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                         ))}
                       </div>
                     ) : (
-                      <p className="text-xs italic text-[#5f5e5e]">None assigned</p>
+                      <p className="text-xs italic text-[#5f5e5e]">Ninguno asignado</p>
                     )}
                   </div>
 
@@ -184,7 +184,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                   <div className="p-3 bg-[#f5f3ef] rounded-lg border border-[#eae8e4]">
                     <p className="text-xs font-bold text-[#5f5e5e] flex items-center gap-2 mb-2">
                       <span className="material-symbols-outlined text-[16px] text-[#af101a]">description</span>
-                      Templates
+                      Plantillas
                     </p>
                     <p className="text-xs text-[#1b1c1a] font-medium flex items-center justify-between">
                       <span>{project.templates.name}</span>
@@ -198,7 +198,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                   <div className="p-3 bg-[#f5f3ef] rounded-lg border border-[#eae8e4]">
                     <p className="text-xs font-bold text-[#5f5e5e] flex items-center gap-2 mb-2">
                       <span className="material-symbols-outlined text-[16px] text-[#af101a]">psychology</span>
-                      AI Assets
+                      Activos IA
                     </p>
                     {project.aiAssets.length > 0 ? (
                       <div className="flex items-center -space-x-1">
@@ -213,7 +213,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                         ))}
                       </div>
                     ) : (
-                      <p className="text-xs italic text-[#5f5e5e]">None assigned</p>
+                      <p className="text-xs italic text-[#5f5e5e]">Ninguno asignado</p>
                     )}
                   </div>
                 </div>
@@ -226,7 +226,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                   className="flex-1 py-2.5 bg-white hover:bg-[#eae8e4] text-[#1b1c1a] border border-[#e4beba]/40 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-2"
                 >
                   <span className="material-symbols-outlined text-[18px]">visibility</span>
-                  <span>{project.status === 'Published' ? 'View Live' : 'Preview'}</span>
+                  <span>{project.status === 'Published' ? 'Ver en Vivo' : 'Vista Previa'}</span>
                 </button>
 
                 <button
@@ -234,12 +234,12 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                   className="flex-1 py-2.5 bg-white hover:bg-[#eae8e4] text-[#1b1c1a] border border-[#e4beba]/40 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-2"
                 >
                   <span className="material-symbols-outlined text-[18px]">edit</span>
-                  <span>{project.status === 'Published' ? 'Revisions' : 'Configure'}</span>
+                  <span>{project.status === 'Published' ? 'Revisiones' : 'Configurar'}</span>
                 </button>
 
                 <button
                   onClick={() => onNavigate('sync')}
-                  title="Synchronization Settings"
+                  title="Configuración de Sincronización"
                   className="p-2.5 bg-white hover:text-[#af101a] text-[#5f5e5e] border border-[#e4beba]/40 rounded-lg transition-colors flex items-center justify-center"
                 >
                   <span className="material-symbols-outlined text-[18px]">more_vert</span>
@@ -253,8 +253,8 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
       {/* Pagination Footer */}
       <div className="mt-8 flex items-center justify-between py-4 border-t border-[#eae8e4]">
         <p className="text-xs text-[#5f5e5e]">
-          Showing <span className="font-bold text-[#1b1c1a]">{filteredProjects.length}</span> of{' '}
-          <span className="font-bold text-[#1b1c1a]">{projects.length}</span> projects
+          Mostrando <span className="font-bold text-[#1b1c1a]">{filteredProjects.length}</span> de{' '}
+          <span className="font-bold text-[#1b1c1a]">{projects.length}</span> proyectos
         </p>
         <div className="flex gap-1.5">
           <button className="w-8 h-8 flex items-center justify-center rounded-lg border border-[#eae8e4] text-[#5f5e5e] hover:bg-[#f5f3ef]">
@@ -277,7 +277,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
         <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-md w-full p-6 border border-[#eae8e4] shadow-2xl space-y-4">
             <div className="flex justify-between items-center border-b border-[#eae8e4] pb-3">
-              <h3 className="font-geist text-lg font-bold text-[#1b1c1a]">Create New Catalog Project</h3>
+              <h3 className="font-geist text-lg font-bold text-[#1b1c1a]">Crear Nuevo Proyecto de Catálogo</h3>
               <button 
                 onClick={() => setShowModal(false)}
                 className="text-[#5f5e5e] hover:text-[#af101a]"
@@ -288,27 +288,27 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
 
             <form onSubmit={handleCreateSubmit} className="space-y-4 text-xs">
               <div>
-                <label className="block font-bold text-[#5f5e5e] mb-1">Project Name</label>
+                <label className="block font-bold text-[#5f5e5e] mb-1">Nombre del Proyecto</label>
                 <input
                   type="text"
                   required
                   value={newProjName}
                   onChange={(e) => setNewProjName(e.target.value)}
-                  placeholder="e.g. Spring Luxury Watches 2027"
+                  placeholder="ej. Relojes de Lujo Primavera 2027"
                   className="w-full bg-[#f5f3ef] border border-[#e4beba] rounded-lg p-2.5 focus:outline-none focus:border-[#af101a]"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-[#5f5e5e] mb-1">Base Layout Template</label>
+                <label className="block font-bold text-[#5f5e5e] mb-1">Plantilla de Diseño Base</label>
                 <select
                   value={newProjTemplate}
                   onChange={(e) => setNewProjTemplate(e.target.value)}
                   className="w-full bg-[#f5f3ef] border border-[#e4beba] rounded-lg p-2.5 focus:outline-none focus:border-[#af101a]"
                 >
-                  <option value="Luxe Grid v2.4">Luxe Grid v2.4 (High Fashion)</option>
+                  <option value="Luxe Grid v2.4">Luxe Grid v2.4 (Alta Moda)</option>
                   <option value="Tech Specs v1.1">Tech Specs v1.1 (Industrial)</option>
-                  <option value="Beauty Standard v1">Beauty Standard v1 (Cosmetics)</option>
+                  <option value="Beauty Standard v1">Beauty Standard v1 (Cosméticos)</option>
                   <option value="Minimal Grid 4x8">Minimal Grid 4x8</option>
                 </select>
               </div>
@@ -319,13 +319,13 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                   onClick={() => setShowModal(false)}
                   className="px-4 py-2 border border-[#eae8e4] rounded-lg font-bold text-[#5f5e5e] hover:bg-[#f5f3ef]"
                 >
-                  Cancel
+                  Cancelar
                 </button>
                 <button
                   type="submit"
                   className="px-5 py-2 bg-[#af101a] text-white font-bold rounded-lg hover:brightness-110 shadow-md"
                 >
-                  Create Project
+                  Crear Proyecto
                 </button>
               </div>
             </form>
