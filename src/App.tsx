@@ -20,6 +20,7 @@ import { CatalogPreviewView } from './views/CatalogPreviewView';
 import { SynchronizationView } from './views/SynchronizationView';
 import { ExportCenterView } from './views/ExportCenterView';
 import { SettingsView } from './views/SettingsView';
+import { WizardView } from './views/WizardView';
 
 export default function App() {
   const [currentSection, setCurrentSection] = useState<NavigationSection>('dashboard');
@@ -127,6 +128,8 @@ export default function App() {
         )}
 
         {currentSection === 'settings' && <SettingsView />}
+
+        {currentSection === 'wizard' && <WizardView />}
       </main>
     </div>
   );

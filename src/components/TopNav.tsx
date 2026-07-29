@@ -38,6 +38,8 @@ export const TopNav: React.FC<TopNavProps> = ({
         return 'Centro de Exportación';
       case 'settings':
         return 'Ajustes de Catálogo';
+      case 'wizard':
+        return 'Asistente Rápido';
       default:
         return 'Gestor de Catálogo';
     }

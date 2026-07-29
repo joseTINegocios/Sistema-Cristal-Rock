@@ -7,7 +7,8 @@ export type NavigationSection =
   | 'preview' 
   | 'sync' 
   | 'export'
-  | 'settings';
+  | 'settings'
+  | 'wizard';
 
 export type AIAssetsSubView = 'library' | 'cover-generator' | 'icon-designer' | 'extractor';
 

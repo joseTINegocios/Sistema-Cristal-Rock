@@ -16,6 +16,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentSection, onNavigate }) 
     { id: 'preview', label: 'Vista Previa', icon: 'visibility' },
     { id: 'sync', label: 'Sincronización', icon: 'sync' },
     { id: 'export', label: 'Exportación', icon: 'export_notes' },
+    { id: 'wizard', label: 'Asistente Rápido', icon: 'magic_button' },
   ];
 
   return (
